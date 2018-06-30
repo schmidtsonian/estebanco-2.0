@@ -7,10 +7,22 @@ html( lang='en' )
   body
     include svgs/_svgs
 
-    //- include _nav
+    nav.l-nav: ul
+      li: a(class='js-hxa' href='/', title='Home') Home
+      li: a(class='js-hxa' href='/about', title='About') About
 
-    main.l-container(id='js-l-container')
-      block body
+    main.l-container
+
+      span.l-nav-toggle
+
+      .l-container__handler(id='js-l-container__handler')
+        .t-home(
+        id='js-t-home',
+        class='h-abs-bg')
+          header.t-home__header
+          .t-home__slider
+
+        block body
 
     //- include _loader
 

@@ -60,9 +60,10 @@ gulp.task('default', (cb) => {
 // Gulp Tasks "watch"
 gulp.task('watch', () => {
   browserSync.init({
-    server: config.project.dest + '/',
-    port:   config.project.port,
-    open:   false,
+    server:  config.project.dest + '/',
+    port:    config.project.port,
+    open:    'local',
+    browser: 'google chrome'
   });
 
   plugins.watch([config.pugs.src], () => gulp.start('pugs'));

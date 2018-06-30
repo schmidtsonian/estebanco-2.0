@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "help": "bin/help.sh",
     "deps": "bin/build/deps.sh",
-    "bw": "bin/build/build-and-watch.sh",
+    "cbw": "bin/build/clean-build-and-watch.sh",
     "rebuild": "bin/build/rebuild.sh",
     "build": "bin/build/build.sh",
     "watch": "bin/build/watch.sh",

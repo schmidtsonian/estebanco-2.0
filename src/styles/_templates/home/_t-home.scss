@@ -1,11 +1,10 @@
-
 /*=============================================
-=                 about               =
+=                      home                   =
 =============================================*/
 
 /*----------  Core  ----------*/
-@import 'about-[base]';
+@import 't-home-[base]';
 
 /*----------  Enhacements  ----------*/
-
+@include breakpoint($SM) {@import 't-home-[sm]';}
 
