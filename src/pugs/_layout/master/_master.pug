@@ -16,11 +16,26 @@ html( lang='en' )
       span.l-nav-toggle
 
       .l-container__handler(id='js-l-container__handler')
+
         .t-home(
         id='js-t-home',
         class='h-abs-bg')
           header.t-home__header
+            .t-home__header-container(class='h-table')
+              .t-home__header-content(class='h-table__cell')
+
+                h2.t-home__top Lorem ipsum
+
+                h1.t-home__title
+                  span Lorem Ipsum
+                  span Dolor Sit Amet
+
+                h3.t-home__bottom Lorem ipsum
           .t-home__slider
+            .t-home__slider-content(class='h-abs-center')
+              span.t-home__slider-number-big
+              span.t-home__slider-number-small
+              span.t-home__slider-description
 
         block body
 
