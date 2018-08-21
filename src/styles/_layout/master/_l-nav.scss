@@ -7,9 +7,11 @@
 
 .l-nav-toggle {
   display: block;
-  position: relative;
+  position: fixed;
   width: 2.5rem;
   height: 2.5rem;
+  left: 3rem;
+  top: 3rem;
   background-color: $COLOR_GREEN;
   cursor: pointer;
   z-index: 10;

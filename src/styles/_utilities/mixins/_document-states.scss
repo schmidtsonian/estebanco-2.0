@@ -1,7 +1,14 @@
 
-@mixin document-is-loadedn {
-    
-    body.is-loaded {
-        @content;
-    }
+@mixin document-isloaded {
+
+  body.is-loaded {
+    @content;
+  }
+}
+
+@mixin is-menuopen {
+
+  body.is-menuopen {
+    @content;
+  }
 }
