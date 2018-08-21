@@ -6,5 +6,6 @@
 @import 't-home-[base]';
 
 /*----------  Enhacements  ----------*/
-@include breakpoint($SM) {@import 't-home-[sm]';}
+@include breakpoint($SM) {@import 't-home-[SM]';}
+@include breakpoint($LG) {@import 't-home-[lg]';}
 

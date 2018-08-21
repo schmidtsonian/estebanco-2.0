@@ -1,34 +1,4 @@
-.t-home__header,
-.t-home__slider {
-  float: left;
-  height: 100%;
-}
-
-/*----------  Header  ----------*/
-
-.t-home__header {
-  width: 60%;
-}
-
-.t-home__header-content {
-  width: 40%;
-  padding-right: 20vw;
-  padding-left: 10vw;
-}
-
-.t-home__title {
-  font-size: 2.8rem;
-  padding-bottom: 6rem;
-}
-
 /*----------  Slider  ----------*/
-
-.t-home__slider {
-  width: 40%;
-}
-.t-home__slider-content {
-  width: 100%;
-  height: 80%;
-  left: -20vw;
-  top: 0;
+.t-home__slider-item__number {
+  font-size: 20rem;
 }

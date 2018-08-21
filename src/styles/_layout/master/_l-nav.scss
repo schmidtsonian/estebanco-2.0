@@ -4,6 +4,7 @@
   height: 100vh;
   left: -100vw;
 }
+
 .l-nav-toggle {
   display: block;
   position: relative;
@@ -12,4 +13,21 @@
   background-color: $COLOR_GREEN;
   cursor: pointer;
   z-index: 10;
+
+  span {
+    height: 2px;
+    background-color: $COLOR_WHITE;
+    margin-left: 8px;
+    &:nth-child(1) {
+      top: -14px;
+      margin-right: 11px;
+    }
+    &:nth-child(2) {
+      margin-right: 9px;
+    }
+    &:nth-child(3) {
+      bottom: -14px;
+      margin-right: 12px;
+    }
+  }
 }

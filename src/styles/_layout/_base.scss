@@ -1,5 +1,5 @@
 html {
-  font-family: $FONT_MONOSPACE;
+  font-family: $FONT_NOVA;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -24,6 +24,7 @@ body {
 
 a {
   text-decoration: none;
+  color: currentColor;
 }
 
 img {

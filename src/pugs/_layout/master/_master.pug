@@ -14,6 +14,9 @@ html( lang='en' )
     main.l-container
 
       span.l-nav-toggle
+        span.h-abs-center
+        span.h-abs-center
+        span.h-abs-center
 
       .l-container__handler(id='js-l-container__handler')
 
@@ -27,16 +30,35 @@ html( lang='en' )
                 h2.t-home__top Lorem ipsum
 
                 h1.t-home__title
-                  span Lorem Ipsum
+                  span Estebanco
                   span Dolor Sit Amet
 
-                h3.t-home__bottom Lorem ipsum
+                a.t-home__bottom(
+                href='mailto:esteban@fugitivepixel.com',
+                title='') esteban@fugitivepixel.com
           .t-home__slider
             .t-home__slider-content(class='h-abs-center')
-              span.t-home__slider-number-big
-              span.t-home__slider-number-small
-              span.t-home__slider-description
 
+              .t-home__slider-nav(class='h-abs-left-top')
+                span.t-home__slider-nav__bt
+                  span(class='h-abs-center')
+                  span(class='h-abs-center')
+                span.t-home__slider-nav__bt
+                  span(class='h-abs-center')
+                  span(class='h-abs-center')
+
+              .t-home__slider-item(class='h-abs-center')
+                .t-home__slider-item__image(
+                class='h-abs-center h-abs-bg',
+                style='background-image:url(assets/images/temp.jpg)')
+
+                span.t-home__slider-item__number 03
+
+                span.t-home__slider-item__line-top(class='h-abs-center-top')
+                span.t-home__slider-item__line-bottom(class='h-abs-center-bottom')
+
+                p.t-home__slider-item__desc-top(class='h-abs-center-top') Read more
+                p.t-home__slider-item__desc-bottom(class='h-abs-center-bottom') lorem ipsum
         block body
 
     //- include _loader

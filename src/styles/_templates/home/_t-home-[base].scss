@@ -27,7 +27,7 @@
 
 .t-home__title {
   position: relative;
-  font-family: $FONT_SERIF;
+  font-family: $FONT_ROZHA;
   font-size: 1.6rem;
   line-height: 1.2em;
   padding-top: .25rem;
@@ -46,7 +46,7 @@
 .t-home__slider {
   height: 40%;
   background-color: $COLOR_LIGHT_GREY;
-  background: linear-gradient(45deg, $COLOR_LIGHT_GREY 0%, $COLOR_WHITE 100%);
+  background: linear-gradient(45deg, $COLOR_LIGHT_GREY 50%, $COLOR_WHITE 100%);
 }
 
 .t-home__slider-content {
@@ -54,4 +54,96 @@
   height: 100%;
   top: -3rem;
   background-color: $COLOR_WHITE;
+}
+
+.t-home__slider-item {
+  overflow: hidden;
+}
+
+.t-home__slider-item__image {
+  opacity: .2;
+}
+
+.t-home__slider-item__number {
+  font-family: $FONT_ANTON;
+  font-size: 10rem;
+  color: $COLOR_GREY;
+  position: absolute;
+  right: -0.1em;
+  top: -0.2em;
+  display: block;
+  line-height: 1em;
+  opacity: 0.4;
+}
+
+.t-home__slider-item__line-top,
+.t-home__slider-item__line-bottom {
+  height: 2px;
+  background-color: $COLOR_WHITE;
+  margin-left: 2rem;
+}
+
+.t-home__slider-item__line-top {
+  top: 3rem;
+}
+
+.t-home__slider-item__line-bottom {
+  bottom: 3rem;
+}
+
+.t-home__slider-item__line-top,
+.t-home__slider-item__line-bottom,
+.t-home__slider-item__desc-top,
+.t-home__slider-item__desc-bottom {
+  margin-right: 2rem;
+}
+
+.t-home__slider-item__desc-top,
+.t-home__slider-item__desc-bottom {
+  color: $COLOR_BLACK;
+  text-align: right
+}
+
+.t-home__slider-item__desc-top {
+  top: 1.5em;
+  cursor: pointer;
+}
+
+.t-home__slider-item__desc-bottom {
+  bottom: 1.5em;
+}
+
+.t-home__slider-nav {
+  height: 3rem;
+  width: 6rem;
+  top: -3rem;
+}
+
+.t-home__slider-nav__bt {
+  position: relative;
+  display: block;
+  float: left;
+  width: 50%;
+  height: 100%;
+  background-color: $COLOR_GREEN;
+  color: $COLOR_WHITE;
+  cursor: pointer;
+
+  span:nth-child(1) {
+    width: 1.5rem;
+    height: 2px;
+    background-color: currentColor;
+  }
+  span:nth-child(2) {
+    width: 1rem;
+    height: 1rem;
+    border-color: currentColor;
+    border-left: 2px solid;
+    border-top: 2px solid;
+    transform: rotate(-45deg);
+    left: -2px;
+  }
+  &:last-child {
+    transform: rotate(180deg);
+  }
 }
