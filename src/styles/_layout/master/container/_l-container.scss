@@ -1,0 +1,11 @@
+/*=============================================
+=             Layout container                =
+=============================================*/
+
+/*----------  Core  ----------*/
+@import 'l-container-[base]';
+
+/*----------  Enhacements  ----------*/
+@include breakpoint($SM) {@import 'l-container-[SM]';}
+@include breakpoint($MD) {@import 'l-container-[md]';}
+

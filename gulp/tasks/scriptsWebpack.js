@@ -5,7 +5,7 @@ module.exports = (gulp, config, browserSync, isProduction, plugins) => {
       .pipe(plugins.webpackStream({
         cache: true,
         entry: {
-          app: ['./src/scripts/app.js'],
+          main: ['./src/scripts/main.js'],
           vendor: ['jquery', 'gsap', 'lodash', 'hammerjs', 'babel-polyfill'],
         },
         output: {
