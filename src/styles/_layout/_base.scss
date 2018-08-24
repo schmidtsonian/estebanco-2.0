@@ -6,12 +6,11 @@ html {
 
 body {
   font-size: 10px;
-  overflow-x: hidden;
   line-height: 1.4em;
   color: $COLOR_BLACK;
   overflow-x: hidden;
   background: linear-gradient(135deg, $COLOR_WHITE 0%, $COLOR_GREY 100%);
-  perspective: 25vw;
+  perspective: 75vw;
 
   @include breakpoint($XS) { font-size: 12px; }
   @include breakpoint($SM) { font-size: 14px; }

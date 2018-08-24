@@ -7,9 +7,23 @@ html( lang='en' )
   body
     include svgs/_svgs
 
-    nav.l-nav: ul
-      li: a(class='js-hxa' href='/', title='Home') Home
-      li: a(class='js-hxa' href='/about', title='About') About
+    nav.l-nav
+      .l-nav__content.l-nav__content--front(class='h-table')
+        .l-nav__links(class='h-table__cell')
+          a.l-nav__link(
+          class='js-hxa',
+          class='is-active'
+          href='/',
+          title='Home')
+            span.l-nav__link__bg
+            span.l-nav__link__text Home
+
+          a.l-nav__link(
+          class='js-hxa',
+          href='/experiments',
+          title='Experiments')
+            span.l-nav__link__bg
+            span.l-nav__link__text Experiments
 
     span.l-nav-toggle(id='js-bt-nav')
       span.h-abs-center

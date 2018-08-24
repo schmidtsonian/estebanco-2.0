@@ -6,6 +6,7 @@
 @import 'l-container-[base]';
 
 /*----------  Enhacements  ----------*/
-@include breakpoint($SM) {@import 'l-container-[SM]';}
+@include breakpoint($XS) {@import 'l-container-[xs]';}
+@include breakpoint($SM) {@import 'l-container-[sm]';}
 @include breakpoint($MD) {@import 'l-container-[md]';}
 

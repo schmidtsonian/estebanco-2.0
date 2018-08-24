@@ -1,0 +1,122 @@
+.l-nav {
+  position: fixed;
+  width: 100vw;
+  height: calc(100vh - 2rem);
+  left: -200vw;
+}
+
+.l-nav-toggle {
+  display: block;
+  position: fixed;
+  width: 2.5rem;
+  height: 2.5rem;
+  left: 2rem;
+  top: 1rem;
+  background-color: $COLOR_GREEN;
+  cursor: pointer;
+  z-index: 10;
+
+  span {
+    height: 2px;
+    background-color: $COLOR_WHITE;
+    margin-left: 8px;
+    &:nth-child(1) {
+      top: -14px;
+      margin-right: 11px;
+      width: calc(100% - 19px);
+    }
+    &:nth-child(2) {
+      margin-right: 9px;
+      width: calc(100% - 17px);
+    }
+    &:nth-child(3) {
+      bottom: -14px;
+      margin-right: 12px;
+      width: calc(100% - 20px);
+    }
+  }
+}
+
+.l-nav__link {
+  display: block;
+  font-size: 1rem;
+  line-height: 5em;
+  height: 5em;
+  position: relative;
+
+  &.is-active {
+
+    .l-nav__link__bg {
+      opacity: 1;
+    }
+    .l-nav__link__text {
+      color: $COLOR_WHITE;
+    }
+  }
+}
+
+.l-nav__link__text {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.l-nav__link__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-left: 0;
+  perspective: 30vw;
+  opacity: 0;
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+  }
+
+  &:after {
+    background: linear-gradient(to right, $COLOR_GREEN 20%, $COLOR_GREY 100%);
+    transform-origin: left;
+    transform: rotateY(30deg);
+  }
+
+  &:before {
+    transform-origin: right;
+    transform: rotateY(-70deg);
+    background: linear-gradient(to right, $COLOR_GREY 90%, $COLOR_GREEN 100%);
+  }
+}
+
+.l-nav__content--bg,
+.l-nav__content--front {
+  position: absolute;
+}
+
+@include is-menuopen {
+  .l-nav {
+    left: 0;
+  }
+  .l-nav-toggle {
+    span {
+      &:nth-child(1),
+      &:nth-child(3) {
+        margin-right: 9px;
+        width: calc(100% - 18px);
+      }
+      &:nth-child(2) {
+        width: 0;
+      }
+      &:nth-child(1) {
+        top: 0;
+        transform: rotate(35deg);
+      }
+      &:nth-child(3) {
+        bottom: 0;
+        transform: rotate(-35deg);
+      }
+    }
+  }
+}

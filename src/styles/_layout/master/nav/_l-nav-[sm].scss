@@ -1,0 +1,7 @@
+.l-nav__link__bg {
+  // perspective: 30vw;
+  &:after {
+    width: 25%;
+    transform: rotateY(70deg);
+  }
+}
