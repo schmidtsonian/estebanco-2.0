@@ -1,5 +1,5 @@
 .t-home__header,
-.t-home__slider {
+.t-home__carousel {
   float: left;
   height: 100%;
 }
@@ -21,19 +21,26 @@
   padding-bottom: 6rem;
 }
 
-/*----------  Slider  ----------*/
+/*----------  carousel  ----------*/
 
-.t-home__slider {
+.t-home__carousel {
   width: 40%;
 }
-.t-home__slider-content {
+.t-home__carousel-content {
   width: 100%;
   height: 80%;
   left: -20vw;
   top: 0;
 }
 
-.t-home__slider-nav {
+.t-home__carousel-nav {
   top: 0;
-  left: -6rem;
+  left: -3rem;
+  width: 3rem;
+  height: 9rem;
+}
+
+.t-home__carousel-nav__bt {
+  width: 100%;
+  height: 33.33%;
 }

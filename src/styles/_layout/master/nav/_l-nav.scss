@@ -9,4 +9,5 @@
 @include breakpoint($XS) {@import 'l-nav-[xs]';}
 @include breakpoint($SM) {@import 'l-nav-[sm]';}
 @include breakpoint($MD) {@import 'l-nav-[md]';}
+@include breakpoint($LG) {@import 'l-nav-[lg]';}
 

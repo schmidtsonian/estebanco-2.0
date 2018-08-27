@@ -3,7 +3,7 @@
   top: 0;
 }
 .t-home__header,
-.t-home__slider {
+.t-home__carousel {
   position: relative;
   color: $COLOR_WHITE;
 }
@@ -41,30 +41,30 @@
   }
 }
 
-/*----------  Slider  ----------*/
+/*----------  Carousel ----------*/
 
-.t-home__slider {
+.t-home__carousel {
   height: 40%;
   background-color: $COLOR_LIGHT_GREY;
   background: linear-gradient(45deg, $COLOR_LIGHT_GREY 50%, $COLOR_WHITE 100%);
 }
 
-.t-home__slider-content {
+.t-home__carousel-content {
   width: calc(100% - 3rem);
   height: 100%;
   top: -3rem;
   background-color: $COLOR_WHITE;
 }
 
-.t-home__slider-item {
+.t-home__carousel-item {
   overflow: hidden;
 }
 
-.t-home__slider-item__image {
+.t-home__carousel-item__image {
   opacity: .2;
 }
 
-.t-home__slider-item__number {
+.t-home__carousel-item__number {
   font-family: $FONT_ANTON;
   font-size: 10rem;
   color: $COLOR_GREY;
@@ -76,59 +76,61 @@
   opacity: 0.4;
 }
 
-.t-home__slider-item__line-top,
-.t-home__slider-item__line-bottom {
+.t-home__carousel-item__line-top,
+.t-home__carousel-item__line-bottom {
   height: 2px;
   background-color: $COLOR_WHITE;
   margin-left: 2rem;
 }
 
-.t-home__slider-item__line-top {
+.t-home__carousel-item__line-top {
   top: 3rem;
 }
 
-.t-home__slider-item__line-bottom {
+.t-home__carousel-item__line-bottom {
   bottom: 3rem;
 }
 
-.t-home__slider-item__line-top,
-.t-home__slider-item__line-bottom,
-.t-home__slider-item__desc-top,
-.t-home__slider-item__desc-bottom {
+.t-home__carousel-item__line-top,
+.t-home__carousel-item__line-bottom,
+.t-home__carousel-item__desc-top,
+.t-home__carousel-item__desc-bottom {
   margin-right: 2rem;
 }
 
-.t-home__slider-item__desc-top,
-.t-home__slider-item__desc-bottom {
+.t-home__carousel-item__desc-top,
+.t-home__carousel-item__desc-bottom {
   color: $COLOR_BLACK;
   text-align: right
 }
 
-.t-home__slider-item__desc-top {
+.t-home__carousel-item__desc-top {
   top: 1.5em;
   cursor: pointer;
 }
 
-.t-home__slider-item__desc-bottom {
+.t-home__carousel-item__desc-bottom {
   bottom: 1.5em;
 }
 
-.t-home__slider-nav {
+.t-home__carousel-nav {
   height: 3rem;
-  width: 6rem;
+  width: 9rem;
   top: -3rem;
 }
 
-.t-home__slider-nav__bt {
+.t-home__carousel-nav__bt {
   position: relative;
   display: block;
   float: left;
-  width: 50%;
+  width: 33.33%;
   height: 100%;
   background-color: $COLOR_GREEN;
   color: $COLOR_WHITE;
   cursor: pointer;
+}
 
+.t-home__carousel-nav__bt--arrow {
   span:nth-child(1) {
     width: 1.5rem;
     height: 2px;
@@ -143,7 +145,37 @@
     transform: rotate(-45deg);
     left: -2px;
   }
-  &:last-child {
-    transform: rotate(180deg);
+}
+
+.t-home__carousel-nav__bt--arrow-next {
+  transform: rotate(180deg);
+}
+
+.t-home__carousel-nav__bt--all {
+  span {
+    width: 1.5rem;
+    height: 2px;
+    &:nth-child(1) {
+      top: -18px;
+    }
+    &:nth-child(3) {
+      bottom: -18px;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      height: 100%;
+      background-color: $COLOR_WHITE;
+    }
+    &:before {
+      width: 4px;
+      float: left;
+    }
+    &:after {
+      width: calc(100% - 8px);
+      float: right;
+    }
   }
 }

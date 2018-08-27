@@ -78,7 +78,8 @@
   }
 
   &:after {
-    background: linear-gradient(to right, $COLOR_GREEN 20%, $COLOR_GREY 100%);
+    // background: linear-gradient(to right, $COLOR_GREEN 20%, $COLOR_GREY 100%);
+    background:$COLOR_GREEN;
     transform-origin: left;
     transform: rotateY(30deg);
   }
@@ -86,7 +87,8 @@
   &:before {
     transform-origin: right;
     transform: rotateY(-70deg);
-    background: linear-gradient(to right, $COLOR_GREY 90%, $COLOR_GREEN 100%);
+    // background: linear-gradient(to right, $COLOR_GREY 90%, $COLOR_GREEN 100%);
+    background:$COLOR_GREEN;
   }
 }
 
