@@ -3,3 +3,10 @@
   margin: 1.5rem;
   height: calc(100vh - 3rem);
 }
+
+@include is-menuopen {
+  .l-container {
+
+    transform: rotateY(-79deg);
+  }
+}
