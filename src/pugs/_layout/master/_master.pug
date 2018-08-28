@@ -57,7 +57,9 @@ html( lang='en' )
                 title='') esteban@fugitivepixel.com
 
           //- Carousel (bottom/right)
-          .t-home__carousel
+          //- is-bullets
+          .t-home__carousel(
+          class='')
             .t-home__carousel-content(
             class='h-abs-center')
 
@@ -74,8 +76,35 @@ html( lang='en' )
                   span(class='h-abs-center')
                   span(class='h-abs-center')
                   span(class='h-abs-center')
+
               //- Carousel items
               .t-home__carousel-items(class='h-abs-center')
+
+                .t-home__carousel-item(class='h-abs-center is-active')
+                  .t-home__carousel-item__image(
+                  class='h-abs-center h-abs-bg',
+                  style='background-image:url(assets/images/temp.jpg)')
+
+                  span.t-home__carousel-item__number 01
+
+                  span.t-home__carousel-item__line-top(class='h-abs-center-top')
+                  span.t-home__carousel-item__line-bottom(class='h-abs-center-bottom')
+
+                  p.t-home__carousel-item__desc-top(class='h-abs-center-top') Read more
+                  p.t-home__carousel-item__desc-bottom(class='h-abs-center-bottom') lorem ipsum
+
+                .t-home__carousel-item(class='h-abs-center')
+                  .t-home__carousel-item__image(
+                  class='h-abs-center h-abs-bg',
+                  style='background-image:url(assets/images/temp.jpg)')
+
+                  span.t-home__carousel-item__number 02
+
+                  span.t-home__carousel-item__line-top(class='h-abs-center-top')
+                  span.t-home__carousel-item__line-bottom(class='h-abs-center-bottom')
+
+                  p.t-home__carousel-item__desc-top(class='h-abs-center-top') Read more
+                  p.t-home__carousel-item__desc-bottom(class='h-abs-center-bottom') lorem ipsum
 
                 .t-home__carousel-item(class='h-abs-center')
                   .t-home__carousel-item__image(
@@ -89,6 +118,25 @@ html( lang='en' )
 
                   p.t-home__carousel-item__desc-top(class='h-abs-center-top') Read more
                   p.t-home__carousel-item__desc-bottom(class='h-abs-center-bottom') lorem ipsum
+
+              //- Carousel list (bullets)
+              .t-home__carousel-bullets(class='h-table')
+                ul(class='h-table__cell')
+                  li.t-home__carousel-bullets__item(class='is-active')
+                    span 01
+                    span lorem ipsum
+                  li.t-home__carousel-bullets__item
+                    span 02
+                    span lorem ipsum
+                  li.t-home__carousel-bullets__item
+                    span 03
+                    span lorem ipsum
+
+                span.t-home__carousel-item__line-top(class='h-abs-center-top')
+                span.t-home__carousel-item__line-bottom(class='h-abs-center-bottom')
+
+                p.t-home__carousel-item__desc-bottom.t-home__carousel-item__desc-bottom--bullets(
+                class='h-abs-center-bottom') lorem ipsum
 
         block body
 

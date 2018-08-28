@@ -47,6 +47,15 @@
   height: 40%;
   background-color: $COLOR_LIGHT_GREY;
   background: linear-gradient(45deg, $COLOR_LIGHT_GREY 50%, $COLOR_WHITE 100%);
+
+  &.is-bullets {
+    .t-home__carousel-bullets {
+      display: table;
+    }
+    .t-home__carousel-items {
+      display: none;
+    }
+  }
 }
 
 .t-home__carousel-content {
@@ -58,6 +67,11 @@
 
 .t-home__carousel-item {
   overflow: hidden;
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
 }
 
 .t-home__carousel-item__image {
@@ -111,6 +125,10 @@
 
 .t-home__carousel-item__desc-bottom {
   bottom: 1.5em;
+}
+
+.t-home__carousel-item__desc-bottom--bullets {
+  color: $COLOR_LIGHT_GREY;
 }
 
 .t-home__carousel-nav {
@@ -177,5 +195,41 @@
       width: calc(100% - 8px);
       float: right;
     }
+  }
+}
+
+.t-home__carousel-bullets {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  position: absolute;
+  background-color: $COLOR_BLACK;
+  display: none;
+}
+
+.t-home__carousel-bullets__item {
+  height: 2.5rem;
+  line-height: 2.5rem;
+  cursor: pointer;
+  color: $COLOR_LIGHT_GREY;
+  background-color: rgba($COLOR_LIGHT_GREY, 0);
+  span {
+    display: inline-block;
+    &:first-child {
+      padding-left: 2rem;
+      padding-right: 1rem;
+    }
+    &:last-child {
+      padding-right: 2rem;
+    }
+  }
+  &.is-active {
+    color: $COLOR_WHITE;
+    background-color: rgba($COLOR_LIGHT_GREY, 0.1);
+  }
+}
+
+@include is-desktop {
+  .t-home__carousel-bullets__item:hover {
+    @extend .t-home__carousel-bullets__item.is-active;
   }
 }
