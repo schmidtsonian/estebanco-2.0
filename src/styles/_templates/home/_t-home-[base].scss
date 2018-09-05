@@ -55,6 +55,32 @@
     .t-home__carousel-items {
       display: none;
     }
+    .t-home__carousel-nav__bt--all {
+      span {
+        &:nth-child(1),
+        &:nth-child(3) {
+          margin-right: 9px;
+          width: calc(100% - 18px);
+        }
+        &:nth-child(2) {
+          width: 0;
+        }
+        &:nth-child(1) {
+          top: 0;
+          transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+          bottom: 0;
+          transform: rotate(-45deg);
+        }
+        &:after {
+          width: 0;
+        }
+        &:before {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
