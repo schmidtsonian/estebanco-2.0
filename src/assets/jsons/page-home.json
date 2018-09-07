@@ -1,3 +1,18 @@
 {
-  "home": {}
+  "home": {
+    "carousel": [
+      {
+        "number": "01",
+        "title": "Lorem ipsum",
+        "img_src": "assets/images/temp.jpg",
+        "detail": "<h3>Lorem ipsum dolor</h3> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, impedit hic. Enim sunt consequuntur corrupti quae. Perferendis consequatur voluptates tempora? Dolorem laudantium praesentium asperiores necessitatibus id quibusdam, eveniet voluptatem ex!</p> <p>Do pariatur do consectetur <a href=''>exercitation aliqua</a> nisi enim commodo eiusmod enim eu occaecat do.</p> <p>Officia est aliquip ipsum officia in mollit ex ullamco.</p>"
+      },
+      {
+        "number": "02",
+        "title": "Lorem ipsum",
+        "img_src": "assets/images/temp.jpg",
+        "detail": "<h3>Lorem ipsum dolor</h3> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, impedit hic. Enim sunt consequuntur corrupti quae. Perferendis consequatur voluptates tempora? Dolorem laudantium praesentium asperiores necessitatibus id quibusdam, eveniet voluptatem ex!</p> <p>Do pariatur do consectetur <a href=''>exercitation aliqua</a> nisi enim commodo eiusmod enim eu occaecat do.</p> <p>Officia est aliquip ipsum officia in mollit ex ullamco.</p>"
+      }
+    ]
+  }
 }

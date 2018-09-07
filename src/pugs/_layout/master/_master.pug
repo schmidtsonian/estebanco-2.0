@@ -1,5 +1,5 @@
 doctype html
-html( lang='en' )
+html(lang='en')
 
   head
     include head/_head
@@ -7,140 +7,11 @@ html( lang='en' )
   body
     include svgs/_svgs
 
-    nav.l-nav
-      .l-nav__content.l-nav__content--front(class='h-table')
-        .l-nav__links(class='h-table__cell')
-          a.l-nav__link(
-          class='js-hxa',
-          class='is-active'
-          href='/',
-          title='Home')
-            span.l-nav__link__bg
-            span.l-nav__link__text Home
+    include _l-header
 
-          a.l-nav__link(
-          class='js-hxa',
-          href='/experiments',
-          title='Experiments')
-            span.l-nav__link__bg
-            span.l-nav__link__text Experiments
+    main.l-container: .l-container__handler(id='js-l-container__handler')
 
-    span.l-nav-toggle(id='js-bt-nav')
-      span.h-abs-center
-      span.h-abs-center
-      span.h-abs-center
-
-    main.l-container
-
-      .l-container__handler(id='js-l-container__handler')
-
-        .t-home(
-        id='js-t-home',
-        class='h-abs-bg')
-
-          //- Header (top/left)
-          header.t-home__header
-
-            .t-home__header-container(
-            class='h-table')
-              .t-home__header-content(
-              class='h-table__cell')
-
-                h2.t-home__top Lorem ipsum
-
-                h1.t-home__title
-                  span Estebanco
-                  span Dolor Sit Amet
-
-                a.t-home__bottom(
-                href='mailto:esteban@fugitivepixel.com',
-                title='') esteban@fugitivepixel.com
-
-          //- Carousel (bottom/right)
-          //- is-bullets
-          .t-home__carousel(
-          id='js-home-carousel',
-          class='')
-            .t-home__carousel-content(
-            class='h-abs-center')
-
-              //- Carousel navigation
-              .t-home__carousel-nav(
-              class='h-abs-left-top')
-                span.t-home__carousel-nav__bt.t-home__carousel-nav__bt--arrow
-                  span(class='h-abs-center')
-                  span(class='h-abs-center')
-                span.t-home__carousel-nav__bt.t-home__carousel-nav__bt--arrow.t-home__carousel-nav__bt--arrow-next
-                  span(class='h-abs-center')
-                  span(class='h-abs-center')
-                span.t-home__carousel-nav__bt.t-home__carousel-nav__bt--all(
-                id='js-home-carousel__bt-bullets')
-                  span(class='h-abs-center')
-                  span(class='h-abs-center')
-                  span(class='h-abs-center')
-
-              //- Carousel items
-              .t-home__carousel-items(class='h-abs-center')
-
-                .t-home__carousel-item(class='h-abs-center is-active')
-                  .t-home__carousel-item__image(
-                  class='h-abs-center h-abs-bg',
-                  style='background-image:url(assets/images/temp.jpg)')
-
-                  span.t-home__carousel-item__number 01
-
-                  span.t-home__carousel-item__line-top(class='h-abs-center-top')
-                  span.t-home__carousel-item__line-bottom(class='h-abs-center-bottom')
-
-                  p.t-home__carousel-item__desc-top(class='h-abs-center-top') Read more
-                  p.t-home__carousel-item__desc-bottom(class='h-abs-center-bottom') lorem ipsum
-
-                .t-home__carousel-item(class='h-abs-center')
-                  .t-home__carousel-item__image(
-                  class='h-abs-center h-abs-bg',
-                  style='background-image:url(assets/images/temp.jpg)')
-
-                  span.t-home__carousel-item__number 02
-
-                  span.t-home__carousel-item__line-top(class='h-abs-center-top')
-                  span.t-home__carousel-item__line-bottom(class='h-abs-center-bottom')
-
-                  p.t-home__carousel-item__desc-top(class='h-abs-center-top') Read more
-                  p.t-home__carousel-item__desc-bottom(class='h-abs-center-bottom') lorem ipsum
-
-                .t-home__carousel-item(class='h-abs-center')
-                  .t-home__carousel-item__image(
-                  class='h-abs-center h-abs-bg',
-                  style='background-image:url(assets/images/temp.jpg)')
-
-                  span.t-home__carousel-item__number 03
-
-                  span.t-home__carousel-item__line-top(class='h-abs-center-top')
-                  span.t-home__carousel-item__line-bottom(class='h-abs-center-bottom')
-
-                  p.t-home__carousel-item__desc-top(class='h-abs-center-top') Read more
-                  p.t-home__carousel-item__desc-bottom(class='h-abs-center-bottom') lorem ipsum
-
-              //- Carousel list (bullets)
-              .t-home__carousel-bullets(class='h-table')
-                ul(class='h-table__cell')
-                  li.t-home__carousel-bullets__item(class='is-active')
-                    span 01
-                    span lorem ipsum
-                  li.t-home__carousel-bullets__item
-                    span 02
-                    span lorem ipsum
-                  li.t-home__carousel-bullets__item
-                    span 03
-                    span lorem ipsum
-
-                span.t-home__carousel-item__line-top(class='h-abs-center-top')
-                span.t-home__carousel-item__line-bottom(class='h-abs-center-bottom')
-
-                p.t-home__carousel-item__desc-bottom.t-home__carousel-item__desc-bottom--bullets(
-                class='h-abs-center-bottom') lorem ipsum
-
-        block body
+      block body
 
     //- include _loader
 

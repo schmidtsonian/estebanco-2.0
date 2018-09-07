@@ -1,23 +1,27 @@
-import HomeCarousel from './home-carousel';
+import HomeHero from './home-hero/home-hero';
 
 export default class Home {
 
 
   constructor() {
 
-    this.carousel = null;
+    console.log('Home - constructor');
+
+    this.homeHero = null;
+
+    console.log('Home - constructor done');
   }
 
   _cacheElements() {
 
-    this.carousel = new HomeCarousel();
+    this.homeHero = new HomeHero();
 
     return this;
   }
 
   _bindings() {
 
-    this.carousel.init();
+    this.homeHero.init();
 
     return this;
   }
@@ -25,10 +29,13 @@ export default class Home {
 
   async init() {
 
+    console.log('Home - init');
+
     this
       ._cacheElements()
       ._bindings();
 
+    console.log('Home - init done');
     return Promise.resolve();
   }
 }

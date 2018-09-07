@@ -1,21 +1,28 @@
-export default class HomeCarousel {
+export default class HomeHeroBullets {
 
   constructor() {
 
-    console.log('View Home Carousel - constructor');
+    console.log('HomeHeroBullets - constructor');
 
-    this.namespace = 'js-home-carousel';
+    this.namespace = 'js-hc';
 
     this.$scope = null;
     this.$$ = {};
     this.classHelpers = {};
+
+    console.log('HomeHeroBullets - constructor done');
   }
 
   _cacheElements() {
 
-    this.$scope = $(`#${this.namespace}`);
+    const {namespace} = this;
+
+    this.$scope = $(`#${namespace}`);
     this.$$ = {
-      btBullets: $(`#${this.namespace}__bt-bullets`),
+      btBullets: $(`#${namespace}__bt-bullets`),
+      btItemOpen: $(`#${namespace}__bt-item-open`),
+      btItemClose: $(`#${namespace}__bt-item-close`),
+      item: $(`#${namespace}__item`),
     };
 
     this.classHelpers = {
@@ -45,11 +52,13 @@ export default class HomeCarousel {
 
   async init() {
 
-    console.log('View Home Carousel - init');
+    console.log('HomeHeroBullets - init');
 
     this
       ._cacheElements()
       ._bindings();
+
+    console.log('HomeHeroBullets - done');
     return Promise.resolve();
   }
 }

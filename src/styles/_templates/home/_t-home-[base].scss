@@ -98,6 +98,13 @@
   &.is-active {
     display: block;
   }
+
+  &.is-open {
+
+    .t-home__carousel-item__detail {
+      right: 0;
+    }
+  }
 }
 
 .t-home__carousel-item__image {
@@ -156,6 +163,50 @@
 .t-home__carousel-item__desc-bottom--bullets {
   color: $COLOR_LIGHT_GREY;
 }
+
+.t-home__carousel-item__abstract,
+.t-home__carousel-item__detail {
+  overflow: hidden;
+}
+
+.t-home__carousel-item__detail {
+  width: 100%;
+  right: -100%;
+  padding: 0.5rem 1rem 1rem 1rem;
+  background-color: $COLOR_WHITE;
+  box-shadow: 1.4rem 1.4rem 3.0rem 0.6rem rgba($COLOR_BLACK, 0.9);
+  overflow-y: auto;
+}
+
+.t-home__carousel-item__detail-close {
+  display: block;
+  position: relative;
+  color: $COLOR_GREEN;
+  height: 2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  &:after,
+  &:before {
+    display: block;
+    content: '';
+    @include abs-center-right;
+  }
+
+  &:after {
+    width: 2rem;
+    height: 2px;
+    background-color: currentColor;
+  }
+  &:before {
+    width: 1rem;
+    height: 1rem;
+    border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    // right: 1rem;
+    transform: rotate(45deg);
+  }
+}
+
 
 .t-home__carousel-nav {
   height: 3rem;
