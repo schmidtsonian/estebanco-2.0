@@ -35,7 +35,6 @@ export default class HomeHeroItemDetail {
 
     const {$$} = this;
 
-    console.log(this);
     $$.btOpenDetail.on('click', (e) => this._openDetail(e));
     $$.btCloseDetail.on('click', () => this._closeDetail());
 

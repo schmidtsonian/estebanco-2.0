@@ -91,6 +91,10 @@
   background-color: $COLOR_WHITE;
 }
 
+.t-home__carousel-items {
+  overflow: hidden;
+}
+
 .t-home__carousel-item {
   overflow: hidden;
   display: none;

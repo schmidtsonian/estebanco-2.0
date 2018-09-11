@@ -38,8 +38,8 @@ class Carousel {
     this.$$ = {
       prev : $(`#${this.namespace}__bt--prev`, this.$scope),
       next : $(`#${this.namespace}__bt--next`, this.$scope),
-      bullet: $(`#${this.namespace}__bullet`, this.$scope),
-      items: $(`#${this.namespace}__item`, this.$scope),
+      bullet: $(`.${this.namespace}__bullet`, this.$scope),
+      items: $(`.${this.namespace}__item`, this.$scope),
     };
     this.totalItems = this.$$.items.length;
 
