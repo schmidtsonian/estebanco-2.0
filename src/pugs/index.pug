@@ -13,15 +13,14 @@ block body
         .t-home__header-content(
         class='h-table__cell')
 
-          h2.t-home__top Lorem ipsum
+          h2.t-home__top=page.home.header.heading
 
-          h1.t-home__title
-            span Estebanco
-            span Dolor Sit Amet
+          h1.t-home__title: each item in page.home.header.title
+            span=item
 
           a.t-home__bottom(
-          href='mailto:esteban@fugitivepixel.com',
-          title='') esteban@fugitivepixel.com
+          href=`mailto:${page.home.header.email}`,
+          title=page.home.header.title)=page.home.header.email
 
     //- Carousel/Hero (bottom/right)
     //- is-bullets
@@ -51,7 +50,7 @@ block body
         //- Carousel items
         .t-home__carousel-items(class='h-abs-center')
 
-          each item, i in page.home.carousel
+          each item, i in page.home.carousel.items
             //- is-open
             .t-home__carousel-item(
             class='h-abs-center',
@@ -70,7 +69,7 @@ block body
 
                 p.t-home__carousel-item__desc-top(
                 class='h-abs-center-top',
-                class='js-hc__bt-item-open') Read more
+                class='js-hc__bt-item-open')=page.home.carousel.cta_detail
                 p.t-home__carousel-item__desc-bottom(class='h-abs-center-bottom')=item.title
 
               .t-home__carousel-item__detail(
@@ -79,11 +78,12 @@ block body
 
                 span.t-home__carousel-item__detail-close(
                 class='js-hc__bt-item-close')
+
                 !=item.detail
 
         //- Carousel list (bullets)
         .t-home__carousel-bullets(class='h-table')
-          ul(class='h-table__cell'): each item, i in page.home.carousel
+          ul(class='h-table__cell'): each item, i in page.home.carousel.items
             li.t-home__carousel-bullets__item(
             class=`${i == 0?"is-active":""}`)
               span=item.number
@@ -92,5 +92,5 @@ block body
           span.t-home__carousel-item__line-bottom(class='h-abs-center-bottom')
 
           p.t-home__carousel-item__desc-bottom.t-home__carousel-item__desc-bottom--bullets(
-          class='h-abs-center-bottom') lorem ipsum
+          class='h-abs-center-bottom')
 
