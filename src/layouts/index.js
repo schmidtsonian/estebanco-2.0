@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 
-import Header from '../components/layout/Header/Header';
+import Header from './Header/Header';
 
 import '../styles/main.scss';
 
@@ -46,7 +46,7 @@ class Layout extends Component {
         />
         <Header siteTitle={'some title'} />
 
-        <span className='l-nav-toggle'  onClick={this._toggleMobileMenu.bind(this)}>
+        <span className='l-nav-toggle' onClick={this._toggleMobileMenu.bind(this)}>
           <span className='h-abs-center'></span>
           <span className='h-abs-center'></span>
           <span className='h-abs-center'></span>

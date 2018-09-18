@@ -1,11 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'the page title',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
 
 
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'Nova+Mono|Rozha+One|Anton',
+        ]
+      }
+    }
   ],
 }
