@@ -8,7 +8,7 @@
 
 @mixin is-menuopen {
 
-  body.is-menuopen {
+  .l-main.is-menuopen {
     @content;
   }
 }
