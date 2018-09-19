@@ -1,40 +1,82 @@
+// const Prismic = require('prismic-javascript');
+import Prismic from 'prismic-javascript';
 import React, {Component} from 'react';
-import {graphql} from 'gatsby'
 import Layout from '../components/layout';
 import TemplateHome from '../components/templates/TemplateHome/TemplateHome';
+import { array } from 'prop-types';
 
 
-const IndexPage = ({data}) =>  (
-  <Layout>
-    <TemplateHome dataHome={data.allHomeJson.edges}/>
-  </Layout>
-);
+class IndexPage extends Component {
 
-export const query = graphql`
-  query {
-    allHomeJson {
-      edges {
-        node {
-          id
-          name
-          data {
-            subtitle
-            title
-            email
-            items {
-              id
-              bgSrc
-              number
-              action
-              title
-              detail
-            }
-          }
-        }
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: {
+        home: {
+          title_line_1: '',
+          title_line_2: '',
+          subtitle: '',
+          email: '',
+          carousel: []
+        },
+        experiments: []
       }
-    }
+    };
   }
-`
+
+  _normalizeData(data) {
+
+    let dataHome = {};
+    let dataExperiments = [];
+
+    data.map((page) => {
+      switch (page.type) {
+        case 'experiment':
+          dataExperiments.push(page.data);
+          break;
+
+        case 'home':
+          dataHome = page.data;
+          break;
+      }
+    });
+
+    this.setState({data:{
+      home: dataHome,
+      experiment: dataExperiments
+    }});
+  }
+
+  componentDidMount() {
+
+    const API_ENDPOINT = 'https://estebanco.cdn.prismic.io/api/v2';
+    const API_TOKEN = "MC5XNktGMENjQUFDa0F5NjF4.77-977-977-977-9TO-_vQLvv70RYe-_vSxNQTlPEgpy77-9au-_ve-_vVc077-977-977-977-9Ru-_vQ4";
+
+    Prismic.getApi(API_ENDPOINT, {accessToken: API_TOKEN})
+      .then((api) => {
+        return api.query(
+          Prismic.Predicates.any('document.type', ['home', 'experiment'])
+        );
+      }).then(
+        (response) => this._normalizeData(response.results),
+        (err) => {
+          console.log('Something went wrong: ', err);
+        }
+      );
+  }
+
+  render() {
+    // console.log('render~!!!!!!!!!');
+    return (
+      <Layout>
+      <TemplateHome data={this.state.data}/>
+      </Layout>
+
+    );
+  }
+}
+
 
 
 export default IndexPage;

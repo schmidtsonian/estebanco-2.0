@@ -1,33 +1,34 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const TemplateHomeHeader = ({data}) => {
+class TemplateHomeHeader extends Component {
 
-  console.log(data);
+  render() {
 
-  return (
+    const {props} = this;
+    return (
 
-    <header className='t-home__header'>
+      <header className='t-home__header'>
 
-      <div className='t-home__header-container h-table'>
-        <div className='t-home__header-content h-table__cell'>
+        <div className='t-home__header-container h-table'>
+          <div className='t-home__header-content h-table__cell'>
 
-          <h2 className='t-home__top'>
-            {data.subtitle}
-          </h2>
-          <h1 className='t-home__title'>
-            {data.title.map((text, i) =>
-              <span key={i}>{text}</span>
-            )}
-          </h1>
+            <h2 className='t-home__top'>
+              {props.subtitle}
+            </h2>
+            <h1 className='t-home__title'>
+              <span>{props.title_line_1}</span>
+              <span>{props.title_line_2}</span>
+            </h1>
 
-          <a href={`mailto:${data.email}`} title='Mail me' className='t-home__bottom'>
-            {data.email}
-          </a>
+            <a href={`mailto:${props.email}`} title='Mail me' className='t-home__bottom'>
+              {props.email}
+            </a>
+          </div>
         </div>
-      </div>
-    </header>
+        </header>
 
-  );
+    );
+  }
 }
 
 export default TemplateHomeHeader;

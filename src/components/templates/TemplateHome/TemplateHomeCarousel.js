@@ -6,7 +6,7 @@ class TemplateHomeCarousel extends Component {
   constructor(props) {
     super(props);
 
-    console.log(this.props.data);
+    // console.log(this.props.data);
 
     this.helper = {
       classActiveBullets: 'is-bullets',

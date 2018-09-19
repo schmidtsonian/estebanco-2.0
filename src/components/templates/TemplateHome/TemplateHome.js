@@ -1,19 +1,28 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import TemplateHomeHeader from './TemplateHomeHeader';
 import TemplateHomeCarousel from './TemplateHomeCarousel';
 
-const TemplateHome = ({dataHome}) => {
+class TemplateHome extends Component {
 
-  return (
+  render() {
+    // console.log(this.props.data)
+    return (
 
-    <section className='t-home h-abs-bg'>
+      <section className='t-home h-abs-bg'>
 
-      <TemplateHomeHeader data={dataHome[0].node.data}/>
-      <TemplateHomeCarousel data={dataHome[1].node.data}/>
+        <TemplateHomeHeader
+          title_line_1={this.props.data.home.title_line_1}
+          title_line_2={this.props.data.home.title_line_2}
+          subtitle={this.props.data.home.subtitle}
+          email={this.props.data.home.email}
+          carousel={this.props.data.home.carousel}
+        />
+        <TemplateHomeCarousel />
 
-    </section>
-  );
-};
+      </section>
+    );
+  }
+}
 
 export default TemplateHome;
