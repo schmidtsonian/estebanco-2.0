@@ -11,9 +11,16 @@ module.exports = {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          'Nova+Mono|Rozha+One|Anton',
+          `Nova+Mono|Rozha+One|Anton`,
         ]
       }
-    }
+    },
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./data/`,
+      },
+    },
   ],
 }

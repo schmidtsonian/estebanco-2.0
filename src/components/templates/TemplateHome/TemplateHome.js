@@ -3,14 +3,17 @@ import React from 'react';
 import TemplateHomeHeader from './TemplateHomeHeader';
 import TemplateHomeCarousel from './TemplateHomeCarousel';
 
-const TemplateHome = () => (
+const TemplateHome = ({dataHome}) => {
 
-  <section className='t-home h-abs-bg'>
+  return (
 
-    <TemplateHomeHeader />
-    <TemplateHomeCarousel />
+    <section className='t-home h-abs-bg'>
 
-  </section>
-);
+      <TemplateHomeHeader data={dataHome[0].node.data}/>
+      <TemplateHomeCarousel data={dataHome[1].node.data}/>
+
+    </section>
+  );
+};
 
 export default TemplateHome;

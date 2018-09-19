@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 
-import Header from './Header/Header';
+import Header from './molecules/Header/Header';
 
 import '../styles/main.scss';
 
@@ -11,7 +11,7 @@ class Layout extends Component {
 
     super(props);
 
-    this.classHelper = {
+    this.helper = {
       classMenuActive: 'is-menuopen'
     }
 
@@ -21,12 +21,12 @@ class Layout extends Component {
     };
   }
 
-  _toggleMobileMenu() {
+  _toggleMenu() {
 
-    const {classHelper} = this;
+    const {helper} = this;
 
     const isMenuOpen = !this.state.isMenuOpen;
-    const classMenuActive = this.state.isMenuOpen ? '' : classHelper.classMenuActive;
+    const classMenuActive = this.state.isMenuOpen ? '' : helper.classMenuActive;
     this.setState({
       isMenuOpen: isMenuOpen,
       classMenuActive: classMenuActive
@@ -46,14 +46,14 @@ class Layout extends Component {
         />
         <Header siteTitle={'some title'} />
 
-        <span className='l-nav-toggle' onClick={this._toggleMobileMenu.bind(this)}>
+        <span className='l-nav-toggle' onClick={this._toggleMenu.bind(this)}>
           <span className='h-abs-center'></span>
           <span className='h-abs-center'></span>
           <span className='h-abs-center'></span>
         </span>
 
         <main className='l-container'>
-          {this.props.children()}
+          {this.props.children}
         </main>
       </div>
     );
