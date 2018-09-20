@@ -1,14 +1,13 @@
-// const Prismic = require('prismic-javascript');
 import Prismic from 'prismic-javascript';
 import React, {Component} from 'react';
 import Layout from '../components/layout';
 import TemplateHome from '../components/templates/TemplateHome/TemplateHome';
-import { array } from 'prop-types';
 
 
 class IndexPage extends Component {
 
   constructor(props) {
+
     super(props);
 
     this.state = {
@@ -23,29 +22,6 @@ class IndexPage extends Component {
         experiments: []
       }
     };
-  }
-
-  _normalizeData(data) {
-
-    let dataHome = {};
-    let dataExperiments = [];
-
-    data.map((page) => {
-      switch (page.type) {
-        case 'experiment':
-          dataExperiments.push(page.data);
-          break;
-
-        case 'home':
-          dataHome = page.data;
-          break;
-      }
-    });
-
-    this.setState({data:{
-      home: dataHome,
-      experiment: dataExperiments
-    }});
   }
 
   componentDidMount() {
@@ -67,13 +43,41 @@ class IndexPage extends Component {
   }
 
   render() {
-    // console.log('render~!!!!!!!!!');
+
     return (
       <Layout>
       <TemplateHome data={this.state.data}/>
       </Layout>
 
     );
+  }
+
+  _normalizeData(data) {
+
+    let dataHome = {};
+    let dataExperiments = [];
+
+    data.map((page) => {
+
+      switch (page.type) {
+        case 'experiment':
+          dataExperiments.push(page.data);
+          break;
+
+        case 'home':
+          dataHome = page.data;
+          break;
+
+        default: break;
+      }
+
+      return {dataExperiments, dataHome};
+    });
+
+    this.setState({data:{
+      home: dataHome,
+      experiments: dataExperiments
+    }});
   }
 }
 

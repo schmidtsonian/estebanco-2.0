@@ -97,10 +97,14 @@
 
 .t-home__carousel-item {
   overflow: hidden;
-  display: none;
+  display: block;
+  left: -200%;
+  width: 100%;
+  height: 100%;
 
   &.is-active {
-    display: block;
+
+    left: 0;
   }
 
   &.is-open {

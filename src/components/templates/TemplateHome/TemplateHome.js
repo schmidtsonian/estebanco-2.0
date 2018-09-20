@@ -6,7 +6,7 @@ import TemplateHomeCarousel from './TemplateHomeCarousel';
 class TemplateHome extends Component {
 
   render() {
-    // console.log(this.props.data)
+
     return (
 
       <section className='t-home h-abs-bg'>
@@ -18,7 +18,11 @@ class TemplateHome extends Component {
           email={this.props.data.home.email}
           carousel={this.props.data.home.carousel}
         />
-        <TemplateHomeCarousel />
+
+        <TemplateHomeCarousel
+          title_carousel_list={this.props.data.home.title_carousel_list}
+          items={this.props.data.home.carousel}
+        />
 
       </section>
     );
