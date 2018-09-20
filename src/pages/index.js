@@ -46,7 +46,7 @@ class IndexPage extends Component {
 
     return (
       <Layout>
-      <TemplateHome data={this.state.data}/>
+        <TemplateHome data={this.state.data}/>
       </Layout>
 
     );

@@ -19,12 +19,26 @@ class TemplateHomeCarousel extends Component {
     };
   }
 
-  _tweenSlide(direction = 1) {
+  _nextSlide() {
 
-    let index = this.state.currentItemIndex + direction;
-    index = index < 0 ? this.props.items.length - 1 : index;
-    index = index >= this.state.items.length ? 0 : index;
-    this.setState({currentItemIndex: index});
+    const {currentItemIndex} = this.state;
+    this._goToSlide(currentItemIndex + 1);
+  }
+
+  _prevSlide() {
+
+    const {currentItemIndex} = this.state;
+    this._goToSlide(currentItemIndex - 1);
+  }
+
+  _goToSlide(index) {
+
+    const {items} = this.state;
+
+    let i = index;
+    i = i < 0 ? items.length - 1 : i;
+    i = i >= items.length ? 0 : i;
+    this._tweenSlide(i);
   }
 
   _toggleNav() {
@@ -38,6 +52,17 @@ class TemplateHomeCarousel extends Component {
     });
   }
 
+  _toggleNavAndGoToSlide(index) {
+
+    this._toggleNav();
+    this._goToSlide(index);
+  }
+
+  _tweenSlide(index) {
+
+    this.setState({currentItemIndex: index});
+  }
+
   componentDidUpdate(prevProps) {
 
     if (this.props.items !== prevProps.items) {
@@ -47,6 +72,7 @@ class TemplateHomeCarousel extends Component {
   }
 
   render() {
+
     const {title_carousel_list} = this.props;
     const {items} = this.state;
 
@@ -59,11 +85,11 @@ class TemplateHomeCarousel extends Component {
           {/* Navigation */}
           <div className='t-home__carousel-nav h-abs-left-top'>
 
-            <span onClick={this._tweenSlide.bind(this, -1)} className='t-home__carousel-nav__bt t-home__carousel-nav__bt--arrow'>
+            <span onClick={this._prevSlide.bind(this)} className='t-home__carousel-nav__bt t-home__carousel-nav__bt--arrow'>
               <span className='h-abs-center'></span>
               <span className='h-abs-center'></span>
             </span>
-            <span onClick={this._tweenSlide.bind(this, 1)} className='t-home__carousel-nav__bt t-home__carousel-nav__bt--arrow t-home__carousel-nav__bt--arrow-next'>
+            <span onClick={this._nextSlide.bind(this)} className='t-home__carousel-nav__bt t-home__carousel-nav__bt--arrow t-home__carousel-nav__bt--arrow-next'>
               <span className='h-abs-center'></span>
               <span className='h-abs-center'></span>
             </span>
@@ -94,7 +120,7 @@ class TemplateHomeCarousel extends Component {
               {/* state: is-active */}
               {/* WIP */}
               {items.map((item, index) =>
-                <li key={index} className={`t-home__carousel-bullets__item ${index === this.state.currentItemIndex ? 'is-active' : ''}`}>
+                <li onClick={this._toggleNavAndGoToSlide.bind(this, index)} key={index} className={`t-home__carousel-bullets__item ${index === this.state.currentItemIndex ? 'is-active' : ''}`}>
                   <span>{item.number}</span>
                   <span>{item.title}</span>
                 </li>
