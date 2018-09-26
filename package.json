@@ -4,9 +4,10 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.0.3",
+    "gatsby": "^2.0.8",
     "gatsby-link": "^2.0.1",
     "gatsby-plugin-google-fonts": "^0.0.4",
+    "gatsby-plugin-layout": "^1.0.2",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sass": "^2.0.1",
     "gatsby-plugin-sitemap": "^2.0.1",
@@ -14,10 +15,10 @@
     "gatsby-source-prismic": "^1.2.0",
     "gatsby-transformer-json": "^2.1.1",
     "node-sass": "^4.9.3",
+    "prismic-javascript": "^1.5.0",
     "react": "16.5.2",
     "react-dom": "^16.5.2",
-    "react-helmet": "^5.2.0",
-    "prismic-javascript": "^1.5.0"
+    "react-helmet": "^5.2.0"
   },
   "keywords": [
     "gatsby"

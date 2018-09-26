@@ -1,14 +1,24 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import Layout from '../components/layout';
+import React from 'react';
+import {MainContext} from '../contexts/main-context';
+import Page from '../components/page';
+import TemplateExperiments from '../components/templates/template-experiments/template-experiments';
 
-const SecondPage = () => (
-  <Layout>
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
+export default class experiments extends Page {
 
-)
+  dataName = 'experiments';
 
-export default SecondPage
+  render() {
+    return (
+      <MainContext.Consumer>
+        {({onMountPage, onUnmountPage}) => (
+          <TemplateExperiments
+            data={this.state.data}
+            onMountPage={onMountPage}
+            onUnmountPage={onUnmountPage}
+          >
+          </TemplateExperiments>
+        )}
+      </MainContext.Consumer>
+    );
+  }
+}

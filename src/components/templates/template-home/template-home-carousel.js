@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import TemplateHomeCarouselItem from './TemplateHomeCarouselItem';
+import TemplateHomeCarouselItem from './template-home-carouselItem';
 
 class TemplateHomeCarousel extends Component {
 
@@ -61,14 +61,6 @@ class TemplateHomeCarousel extends Component {
   _tweenSlide(index) {
 
     this.setState({currentItemIndex: index});
-  }
-
-  componentDidUpdate(prevProps) {
-
-    if (this.props.items !== prevProps.items) {
-
-      this.setState({items:this.props.items});
-    }
   }
 
   render() {
@@ -137,6 +129,17 @@ class TemplateHomeCarousel extends Component {
     );
   }
 
+  componentDidUpdate(prevProps) {
+
+    if (this.props.items !== prevProps.items) {
+
+      this.setState({items:this.props.items});
+    }
+  }
+
+  componentWillUnmount() {
+    // invoked immediately before a component is unmounted.
+  }
 }
 
 export default TemplateHomeCarousel;
