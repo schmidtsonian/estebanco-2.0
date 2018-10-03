@@ -51,6 +51,6 @@ export class MainProvider extends Component {
   }
 
   _onMountPage(params) {
-    console.log('MainProvider onMountPage', params)
+    console.log('MainProvider onMountPage', params);
   }
 }

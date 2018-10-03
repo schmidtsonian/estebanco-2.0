@@ -1,11 +1,26 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class TemplateHomeHeader extends Component {
+
+  static propTypes = {
+    subtitle: PropTypes.string,
+    title_line_1: PropTypes.string,
+    title_line_2: PropTypes.string,
+    email: PropTypes.string,
+  };
+
+  static defaultProps = {
+    subtitle: '',
+    title_line_1: '',
+    title_line_2: '',
+    email: '',
+  };
 
   render() {
 
     const {props} = this;
-
+    console.log(props)
     return (
 
       <header className='t-home__header'>

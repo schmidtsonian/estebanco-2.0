@@ -1,15 +1,14 @@
 import React from 'react';
 import Template from '../template';
+import TemplateExperimentsHeader from './template-experiments-header';
 
 class TemplateExperiments extends Template {
 
   render() {
 
+    const {data} = this.props;
     return(
-      <div>
-        <h1>Hi from the second page</h1>
-        <p>Welcome to page 2</p>
-      </div>
+      <TemplateExperimentsHeader title={data.title || ''}></TemplateExperimentsHeader>
     )
   }
 }

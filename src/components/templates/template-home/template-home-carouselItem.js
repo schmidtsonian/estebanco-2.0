@@ -1,18 +1,33 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class TemplateHomeCarouselItem extends Component {
 
-  constructor(props) {
-    super(props);
+  static propTypes = {
+    classNameActive: PropTypes.string,
+    bgSrc: PropTypes.string,
+    number: PropTypes.string,
+    action: PropTypes.string,
+    title: PropTypes.string,
+    detail: PropTypes.string,
+  };
 
-    this.helpers = {
-      classNameActive: 'is-open'
-    };
+  static defaultProps = {
+    classNameActive: '',
+    bgSrc: '',
+    number: '',
+    action: '',
+    title: '',
+    detail: '',
+  };
 
-    this.state = {
-      classNameDetailActive: ''
-    };
-  }
+  helpers = {
+    classNameActive: 'is-open'
+  };
+
+  state = {
+    classNameDetailActive: ''
+  };
 
   _closeDetail() {
 
@@ -32,25 +47,37 @@ class TemplateHomeCarouselItem extends Component {
 
   render() {
 
+    const {props, state} = this;
+    console.log(props)
+
+
+
     return (
 
-      <div className={`t-home__carousel-item h-abs-center ${this.props.classNameActive} ${this.state.classNameDetailActive}`}>
+      <div className={`t-home__carousel-item h-abs-center ${props.classNameActive} ${state.classNameDetailActive}`}>
 
         {/* Abstract */}
         <div className='t-home__carousel-item__abstract h-abs-full'>
 
-          <div className='t-home__carousel-item__image h-abs-center h-abs-bg' style={{backgroundImage: `url(${this.props.bgSrc})`}}></div>
+          <div className='t-home__carousel-item__image h-abs-center h-abs-bg' style={{backgroundImage: `url(${props.bgSrc})`}}></div>
           <div className='t-home__carousel-item__image h-abs-center h-abs-bg' ></div>
 
           <span className='t-home__carousel-item__line-top h-abs-center-top'></span>
           <span className='t-home__carousel-item__line-bottom h-abs-center-bottom'></span>
 
-          <span className='t-home__carousel-item__number'>{this.props.number}</span>
+          <span className='t-home__carousel-item__number'>
+            {props.number}
+          </span>
+
           {/* Open Detail */}
-          <p onClick={this._openDetail.bind(this)} className='t-home__carousel-item__desc-top h-abs-center-top'>{this.props.action}</p>
+          <p onClick={this._openDetail.bind(this)} className='t-home__carousel-item__desc-top h-abs-center-top'>
+            {props.action}
+          </p>
 
           {/* Title */}
-          <p className='t-home__carousel-item__desc-bottom h-abs-center-bottom'>{this.props.title}</p>
+          <p className='t-home__carousel-item__desc-bottom h-abs-center-bottom'>
+            {props.title}
+          </p>
         </div>
 
         {/* Detail */}
@@ -59,7 +86,7 @@ class TemplateHomeCarouselItem extends Component {
           {/* Close Detail */}
           <span onClick={this._closeDetail.bind(this)} className='t-home__carousel-item__detail-close'></span>
 
-          <div dangerouslySetInnerHTML={{__html: this.props.detail}} />
+          <div dangerouslySetInnerHTML={{__html: props.detail}} />
         </div>
       </div>
     );

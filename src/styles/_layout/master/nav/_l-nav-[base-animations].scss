@@ -1,0 +1,12 @@
+.l-nav-toggle span {
+  transition-timing-function: $EASE_OUT_CUBIC;
+  transition-duration: 0.15s;
+  transition-property: width, margin-right, transform, top, bottom;
+}
+
+@include is-menuopen {
+  .l-nav-toggle span {
+    transition-timing-function: $EASE_IN_CUBIC;
+    transition-duration: 0.25s;
+  }
+}

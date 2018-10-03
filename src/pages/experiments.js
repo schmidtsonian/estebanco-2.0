@@ -8,11 +8,13 @@ export default class experiments extends Page {
   dataName = 'experiments';
 
   render() {
+    const {data} = this.state;
+
     return (
       <MainContext.Consumer>
         {({onMountPage, onUnmountPage}) => (
           <TemplateExperiments
-            data={this.state.data}
+            data={data}
             onMountPage={onMountPage}
             onUnmountPage={onUnmountPage}
           >

@@ -1,23 +1,30 @@
 import React, {Component} from 'react';
-import TemplateHomeCarouselItem from './template-home-carouselItem';
+import PropTypes from 'prop-types';
+import PrismicDOM from 'prismic-dom';
 
+import TemplateHomeCarouselItem from './template-home-carouselItem';
 class TemplateHomeCarousel extends Component {
 
-  constructor(props) {
-    super(props);
+  static propTypes = {
+    title_carousel_list: PropTypes.string,
+    items: PropTypes.array
+  };
 
-    this.helper = {
-      classActiveBullets: 'is-bullets',
-    };
+  static defaultProps = {
+    title_carousel_list: '',
+    items: []
+  };
 
-    this.isActiveBullets = false;
+  isActiveBullets = false;
 
-    this.state = {
-      currentItemIndex: 0,
-      classActiveBullets: '',
-      items: []
-    };
-  }
+  helper = {
+    classActiveBullets: 'is-bullets',
+  };
+
+  state = {
+    currentItemIndex: 0,
+    classActiveBullets: '',
+  };
 
   _nextSlide() {
 
@@ -33,7 +40,7 @@ class TemplateHomeCarousel extends Component {
 
   _goToSlide(index) {
 
-    const {items} = this.state;
+    const {items} = this.props;
 
     let i = index;
     i = i < 0 ? items.length - 1 : i;
@@ -65,12 +72,12 @@ class TemplateHomeCarousel extends Component {
 
   render() {
 
-    const {title_carousel_list} = this.props;
-    const {items} = this.state;
+    const {state} = this;
+    const {title_carousel_list, items} = this.props;
 
     return (
 
-      <div className={`t-home__carousel ${this.state.classActiveBullets}`}>
+      <div className={`t-home__carousel ${state.classActiveBullets}`}>
 
         <div className='t-home__carousel-content h-abs-center'>
 
@@ -99,8 +106,16 @@ class TemplateHomeCarousel extends Component {
 
             {items.map((item, index) => {
 
-              const classNameActive = index === this.state.currentItemIndex ? 'is-active' : '';
-              return <TemplateHomeCarouselItem key={index} classNameActive={classNameActive} bgSrc={item.image.url} number={item.number} action={item.action} title={item.title} detail={item.detail}/>
+              const classNameActive = index === state.currentItemIndex ? 'is-active' : '';
+              const html = PrismicDOM.RichText.asHtml(item.detail);
+              return <TemplateHomeCarouselItem
+                key={index}
+                classNameActive={classNameActive}
+                bgSrc={item.image.url}
+                number={item.number}
+                action={item.action}
+                title={item.title}
+                detail={html}/>
             }
             )}
           </div>
@@ -129,17 +144,13 @@ class TemplateHomeCarousel extends Component {
     );
   }
 
-  componentDidUpdate(prevProps) {
+  // componentDidUpdate(prevProps) {
 
-    if (this.props.items !== prevProps.items) {
+  //   if (this.props.items !== prevProps.items) {
 
-      this.setState({items:this.props.items});
-    }
-  }
-
-  componentWillUnmount() {
-    // invoked immediately before a component is unmounted.
-  }
+  //     this.setState({items:this.props.items});
+  //   }
+  // }
 }
 
 export default TemplateHomeCarousel;

@@ -1,19 +1,29 @@
 import {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class Template extends Component {
 
+  static propTypes = {
+    preloadImages: PropTypes.func,
+    pageWillClose: PropTypes.func,
+    pageDidPreloadAssets: PropTypes.func,
+    data: PropTypes.object
+  };
+
+  static defaultProps = {
+    preloadImages: () => {},
+    pageWillClose: () => {},
+    pageDidPreloadAssets: () => {},
+    data: {}
+  };
+
   componentDidUpdate(prevProps) {
 
-    if (this.props.data !== prevProps.data) {
+    const {props} = this;
 
-      //validate render
-      //trigger load assets
-      this.props.onMountPage({onMountPage: this});
+    if (props !== prevProps) {
+      props.preloadImages();
     }
-  }
-
-  componentWillUnmount() {
-    this.props.onUnmountPage({onUnmountPage: this});
   }
 }
 

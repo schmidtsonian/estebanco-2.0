@@ -1,49 +1,50 @@
 .l-nav {
   position: fixed;
+  left: 0;
   width: 100vw;
   height: calc(100vh - 2rem);
-  left: -200vw;
 }
 
 .l-nav-toggle {
-  display: block;
   position: fixed;
+  z-index: 10;
+  top: 1rem;
+  left: 2rem;
+  display: block;
   width: 2.5rem;
   height: 2.5rem;
-  left: 2rem;
-  top: 1rem;
-  background-color: $COLOR_GREEN;
   cursor: pointer;
-  z-index: 10;
+  background-color: $COLOR_GREEN;
 
   span {
     height: 2px;
-    background-color: $COLOR_WHITE;
     margin-left: 8px;
+    background-color: $COLOR_WHITE;
     &:nth-child(1) {
       top: -14px;
-      margin-right: 11px;
       width: calc(100% - 19px);
+      margin-right: 11px;
     }
     &:nth-child(2) {
-      margin-right: 9px;
       width: calc(100% - 17px);
+      margin-right: 9px;
     }
     &:nth-child(3) {
       bottom: -14px;
-      margin-right: 12px;
       width: calc(100% - 20px);
+      margin-right: 12px;
     }
   }
 }
 
 .l-nav__link {
+  position: relative;
   display: block;
+  height: 5em;
   font-size: 1rem;
   line-height: 5em;
-  height: 5em;
-  position: relative;
 
+  &:hover,
   &.is-active {
 
     .l-nav__link__bg {
@@ -65,28 +66,28 @@
   width: 100%;
   height: 100%;
   padding-left: 0;
-  perspective: 30vw;
   opacity: 0;
+  perspective: 30vw;
   &:before,
   &:after {
-    content: '';
-    display: block;
     position: absolute;
+    display: block;
     width: 100%;
     height: 100%;
+    content: '';
     transform-style: preserve-3d;
   }
 
   &:after {
+    transform: rotateY(30deg);
+    transform-origin: left;
     // background: linear-gradient(to right, $COLOR_GREEN 20%, $COLOR_GREY 100%);
     background:$COLOR_GREEN;
-    transform-origin: left;
-    transform: rotateY(30deg);
   }
 
   &:before {
-    transform-origin: right;
     transform: rotateY(-70deg);
+    transform-origin: right;
     // background: linear-gradient(to right, $COLOR_GREY 90%, $COLOR_GREEN 100%);
     background:$COLOR_GREEN;
   }
@@ -98,15 +99,12 @@
 }
 
 @include is-menuopen {
-  .l-nav {
-    left: 0;
-  }
   .l-nav-toggle {
     span {
       &:nth-child(1),
       &:nth-child(3) {
-        margin-right: 9px;
         width: calc(100% - 18px);
+        margin-right: 9px;
       }
       &:nth-child(2) {
         width: 0;

@@ -1,0 +1,12 @@
+.l-container {
+  transition-timing-function: $EASE_OUT_CUBIC;
+  transition-duration: 0.25s;
+  transition-property: transform;
+}
+
+@include is-menuopen {
+  .l-container {
+    transition-timing-function: $EASE_IN_CUBIC;
+    transition-duration: 0.35s;
+  }
+}

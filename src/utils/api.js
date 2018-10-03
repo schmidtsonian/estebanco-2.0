@@ -10,6 +10,7 @@ export default class Api {
 
     this.API_ENDPOINT = 'https://estebanco.cdn.prismic.io/api/v2';
     this.API_TOKEN = 'MC5XNktGMENjQUFDa0F5NjF4.77-977-977-977-9TO-_vQLvv70RYe-_vSxNQTlPEgpy77-9au-_ve-_vVc077-977-977-977-9Ru-_vQ4';
+    this.PAGES = ['home', 'experiments'];
 
     this.api = null;
     this.pages = null;
@@ -33,6 +34,8 @@ export default class Api {
 
   _getPages() {
 
+    const {PAGES} = this;
+
     const p = new Promise((resolve) => {
 
       if(this.pages) {
@@ -40,7 +43,7 @@ export default class Api {
       }
 
       this._connect()
-        .then(() => this.api.query(Prismic.Predicates.any('document.type', ['home', 'experiment'])))
+        .then(() => this.api.query(Prismic.Predicates.any('document.type', PAGES)))
         .then(
           (response) => {
             this.pages = this._normalizeData(response.results);
@@ -75,14 +78,16 @@ export default class Api {
 
   _normalizeData(data) {
 
+    // TODO: create/models models
     let dataHome = {};
-    let dataExperiments = [];
+    let dataExperiments = {};
+
 
     data.map((page) => {
 
       switch (page.type) {
-        case 'experiment':
-          dataExperiments.push(page.data);
+        case 'experiments':
+          dataExperiments = page.data;
           break;
 
         case 'home':
