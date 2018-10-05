@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 
+import Transition from "../components/transition"
 import Header from '../components/molecules/header/header';
 import {MainProvider, MainContext} from '../contexts/main-context';
 import '../styles/main.scss';
@@ -30,7 +31,8 @@ class Layout extends Component {
               </span>
 
               <main className='l-container'>
-                {this.props.children}
+
+                <Transition location={this.props.location}>{this.props.children}</Transition>
               </main>
             </div>
           )}

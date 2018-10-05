@@ -10,6 +10,8 @@ export default class Page extends Component {
     data: {}
   };
 
+
+
   componentDidMount() {
     console.log(`Page ${this.dataName}: componentDidMount`);
     this._fetchData();

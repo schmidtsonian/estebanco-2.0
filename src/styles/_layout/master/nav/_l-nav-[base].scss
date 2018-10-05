@@ -74,22 +74,19 @@
     display: block;
     width: 100%;
     height: 100%;
+    transform: rotateY(0deg);
     content: '';
     transform-style: preserve-3d;
   }
 
   &:after {
-    transform: rotateY(30deg);
     transform-origin: left;
-    // background: linear-gradient(to right, $COLOR_GREEN 20%, $COLOR_GREY 100%);
-    background:$COLOR_GREEN;
+    background: $COLOR_GREEN;
   }
 
   &:before {
-    transform: rotateY(-70deg);
     transform-origin: right;
-    // background: linear-gradient(to right, $COLOR_GREY 90%, $COLOR_GREEN 100%);
-    background:$COLOR_GREEN;
+    background: $COLOR_GREEN;
   }
 }
 
@@ -117,6 +114,16 @@
         bottom: 0;
         transform: rotate(-35deg);
       }
+    }
+  }
+
+  .l-nav__link__bg {
+    &:after {
+      transform: rotateY(30deg);
+    }
+
+    &:before {
+      transform: rotateY(-70deg);
     }
   }
 }

@@ -1,12 +1,24 @@
+.l-nav__link__bg:before,
+.l-nav__link__bg:after,
 .l-nav-toggle span {
   transition-timing-function: $EASE_OUT_CUBIC;
-  transition-duration: 0.15s;
+  transition-duration: 0.25s;
+}
+.l-nav-toggle span {
   transition-property: width, margin-right, transform, top, bottom;
 }
 
+.l-nav__link__bg:before,
+.l-nav__link__bg:after {
+  transition-property: transform;
+}
+
+
 @include is-menuopen {
+  .l-nav__link__bg:before,
+  .l-nav__link__bg:after,
   .l-nav-toggle span {
     transition-timing-function: $EASE_IN_CUBIC;
-    transition-duration: 0.25s;
+    transition-duration: 0.35s;
   }
 }
