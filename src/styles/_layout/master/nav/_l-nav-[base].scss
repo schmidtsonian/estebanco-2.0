@@ -79,12 +79,12 @@
     transform-style: preserve-3d;
   }
 
-  &:after {
+  &:before {
     transform-origin: left;
     background: $COLOR_GREEN;
   }
 
-  &:before {
+  &:after {
     transform-origin: right;
     background: $COLOR_GREEN;
   }
@@ -118,11 +118,11 @@
   }
 
   .l-nav__link__bg {
-    &:after {
+    &:before {
       transform: rotateY(30deg);
     }
 
-    &:before {
+    &:after {
       transform: rotateY(-70deg);
     }
   }

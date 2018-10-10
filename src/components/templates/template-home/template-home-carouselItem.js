@@ -48,9 +48,6 @@ class TemplateHomeCarouselItem extends Component {
   render() {
 
     const {props, state} = this;
-    console.log(props)
-
-
 
     return (
 

@@ -20,7 +20,6 @@ class TemplateHomeHeader extends Component {
   render() {
 
     const {props} = this;
-    console.log(props)
     return (
 
       <header className='t-home__header'>

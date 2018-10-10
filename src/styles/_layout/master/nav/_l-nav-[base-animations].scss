@@ -1,24 +1,80 @@
+
+/*----------  From  ----------*/
+.l-nav__link__bg:before,
+.l-nav__link__bg:after,
+.l-nav-toggle span,
+.l-nav__link__text {
+  transition-timing-function: $EASE_OUT_CUBIC;
+}
 .l-nav__link__bg:before,
 .l-nav__link__bg:after,
 .l-nav-toggle span {
-  transition-timing-function: $EASE_OUT_CUBIC;
   transition-duration: 0.25s;
 }
+
 .l-nav-toggle span {
   transition-property: width, margin-right, transform, top, bottom;
 }
 
+.l-nav__link__text {
+  left: 200px;
+  transition-property: opacity, left, color;
+  transition-duration: 0.25s, 0.25s, 0.15s;
+}
+
+.l-nav__link__text,
 .l-nav__link__bg:before,
 .l-nav__link__bg:after {
-  transition-property: transform;
+  opacity: 0;
+}
+
+.l-nav__link__bg:before,
+.l-nav__link__bg:after {
+  transition-property: opacity, transform;
+}
+
+.l-nav__link__bg {
+  top: 50%;
+  height: 0;
+  transition-timing-function: $EASE_IN_CUBIC;
+  transition-duration: 0.15s;
+  transition-property: height, top;
+  opacity: 1;
 }
 
 
+/*----------  To  ----------*/
 @include is-menuopen {
+  .l-nav__link__text,
   .l-nav__link__bg:before,
   .l-nav__link__bg:after,
   .l-nav-toggle span {
     transition-timing-function: $EASE_IN_CUBIC;
+  }
+
+  .l-nav__link__text,
+  .l-nav__link__bg:before,
+  .l-nav__link__bg:after {
     transition-duration: 0.35s;
+    opacity: 1;
+  }
+
+  .l-nav__link__text {
+    left: 0;
+    transition-duration: .4s;
+  }
+}
+
+.l-nav__link {
+  &:hover,
+  &.is-active {
+    .l-nav__link__bg {
+      transition-delay: .5s;
+      top: 0;
+      height: 100%;
+    }
+    .l-nav__link__text {
+      transition-delay: 0s, 0s, 0.1s;
+    }
   }
 }

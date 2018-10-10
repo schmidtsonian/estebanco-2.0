@@ -8,12 +8,47 @@ import '../styles/main.scss';
 
 class Layout extends Component {
 
+  helper = {
+    classMenuActive: 'is-menuopen'
+  }
+
+  state = {
+    classMenuActive: ''
+  };
+
+  toggleMenu() {
+
+    const {helper} = this;
+
+    const classMenuActive = this.state.classMenuActive === '' ? helper.classMenuActive : '';
+
+    this.setState({
+      classMenuActive: classMenuActive
+    });
+  }
+
+  _closeMenu() {
+
+    this.setState({classMenuActive: ''});
+  }
+
+  shouldComponentUpdate(nexProps) {
+
+    if(nexProps.location.pathname !== this.props.location.pathname) {
+      this._closeMenu();
+    }
+
+    return true;
+  }
+
   render() {
 
+    const {classMenuActive} = this.state;
+    const {location, children} = this.props
     return (
       <MainProvider>
         <MainContext.Consumer>
-          {({toggleManu, classMenuActive}) => (
+          {() => (
             <div className={`l-main ${classMenuActive}`}>
               <Helmet
                 title={'some title'}
@@ -22,17 +57,13 @@ class Layout extends Component {
                   { name: 'keywords', content: 'sample, something' },
                 ]}
               />
-              <Header siteTitle={'some title'} />
-
-              <span className='l-nav-toggle' onClick={toggleManu}>
-                <span className='h-abs-center'></span>
-                <span className='h-abs-center'></span>
-                <span className='h-abs-center'></span>
-              </span>
+              <Header siteTitle={'some title'} onClick={this.toggleMenu.bind(this)}/>
 
               <main className='l-container'>
 
-                <Transition location={this.props.location}>{this.props.children}</Transition>
+                <Transition location={location}>
+                  {children}
+                </Transition>
               </main>
             </div>
           )}
@@ -47,7 +78,6 @@ class Layout extends Component {
 
   componentDidMount() {
     console.log('Layout componentDidMount //start api');
-    // console.log(this.props.location.pathname);
   }
 }
 

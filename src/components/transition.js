@@ -1,47 +1,57 @@
-import React from "react"
-import {
-  TransitionGroup,
-  Transition as ReactTransition,
-} from "react-transition-group"
+import React, {PureComponent} from "react"
+import {TransitionGroup, Transition as ReactTransition} from "react-transition-group"
 
-const timeout = 750
+const timeout = 500;
 const getTransitionStyles = {
   entering: {
     position: `absolute`,
+    width: '100%',
+    height: '100%',
+    left: 0,
+    right: 0,
+    transitionProperty: 'opacity',
+    transitionTimingFunction: 'ease-in-out',
+    transitionDuration: `${timeout}ms`,
     opacity: 0,
   },
   entered: {
-    transition: `opacity ${timeout}ms ease-in-out 1s`,
+    transitionProperty: 'opacity',
+    transitionTimingFunction: 'ease-in-out',
+    transitionDuration: `${timeout}ms`,
     opacity: 1,
   },
   exiting: {
-    transition: `opacity ${timeout}ms ease-in-out 1s`,
+    transitionProperty: 'opacity',
+    transitionTimingFunction: 'ease-in-out',
+    transitionDuration: `${timeout}ms`,
+    opacity: 0,
+  },
+  exited: {
+    transitionProperty: 'opacity',
+    transitionTimingFunction: 'ease-in-out',
+    transitionDuration: `${timeout}s`,
     opacity: 0,
   },
 }
 
-class Transition extends React.PureComponent {
+class Transition extends PureComponent {
+
   render() {
-    const { children, location } = this.props
+    const {children, location} = this.props;
 
     return (
-      <TransitionGroup>
+      <TransitionGroup className='l-container__handler'>
         <ReactTransition
           key={location.pathname}
-          timeout={{
-            enter: timeout,
-            exit: timeout,
-          }}
+          timeout={{enter: timeout, exit: timeout}}
         >
-          {status => (
-            <div
-              style={{
-                ...getTransitionStyles[status],
-              }}
-            >
+          {(status) => {
+            return (<div className='l-container__view' style={{
+              ...getTransitionStyles[status],
+            }}>
               {children}
-            </div>
-          )}
+            </div>);
+          }}
         </ReactTransition>
       </TransitionGroup>
     )
