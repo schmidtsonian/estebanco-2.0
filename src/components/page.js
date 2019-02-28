@@ -16,6 +16,8 @@ export default class Page extends Component {
     this._fetchData();
   }
 
+
+
   _fetchData() {
 
     const {dataName} = this;

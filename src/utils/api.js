@@ -10,7 +10,7 @@ export default class Api {
 
     this.API_ENDPOINT = 'https://estebanco.cdn.prismic.io/api/v2';
     this.API_TOKEN = 'MC5XNktGMENjQUFDa0F5NjF4.77-977-977-977-9TO-_vQLvv70RYe-_vSxNQTlPEgpy77-9au-_ve-_vVc077-977-977-977-9Ru-_vQ4';
-    this.PAGES = ['home', 'experiments'];
+    this.PAGES = ['home', 'experiments', 'experiment'];
 
     this.api = null;
     this.pages = null;
@@ -29,7 +29,7 @@ export default class Api {
 
     await this._getPages();
 
-    return(this.pages.experiments);
+    return(this.pages.experiment);
   }
 
   _getPages() {
@@ -80,26 +80,35 @@ export default class Api {
 
     // TODO: create/models models
     let dataHome = {};
-    let dataExperiments = {};
-
+    let dataExperiments = {
+      title: '',
+      description: '',
+      items: []
+    };
 
     data.map((page) => {
 
       switch (page.type) {
         case 'experiments':
-          dataExperiments = page.data;
+          dataExperiments.title = page.data.title;
+          dataExperiments.description = page.data.description;
+          break;
+
+        case 'experiment':
+          dataExperiments.items.push(page.data);
           break;
 
         case 'home':
           dataHome = page.data;
           break;
-
-        default: break;
+        // eslint-disable-next-line
+        default:
+          break;
       }
+
 
       return {dataExperiments, dataHome};
     });
-
 
     return {
       home: dataHome,

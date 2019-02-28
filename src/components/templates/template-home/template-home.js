@@ -24,6 +24,7 @@ export default class TemplateHome extends Template {
     ...TemplateHome.defaultProps,
 
     // Model definition
+    // TODO: create model definition
     data: {
       title_line_1: '',
       title_line_2: '',
@@ -36,7 +37,6 @@ export default class TemplateHome extends Template {
   render() {
 
     const {data} = this.props;
-
     return (
 
       <section className='t-home h-abs-bg'>

@@ -2,15 +2,14 @@ import React, {Component} from 'react';
 
 class TemplateExperimentsHeader extends Component {
 
-
-
   render() {
 
-    const {title} = this.props;
+    const {title, description} = this.props;
 
     return (
-      <header>
-        <h1>{title}</h1>
+      <header className='t-experiments__header'>
+        <h1 className='t-experiments__title'>{title}</h1>
+        <h2 className='t-experiments__desc'>{description}</h2>
       </header>
     );
   }

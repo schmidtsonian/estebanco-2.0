@@ -19,10 +19,10 @@ export class MainProvider extends Component {
 
 
   _onUnmountPage() {
-    // console.log('MainProvider onUnmountPage');
+    console.log('MainProvider onUnmountPage');
   }
 
   _onMountPage(params) {
-    // console.log('MainProvider onMountPage', params);
+    console.log('MainProvider onMountPage', params);
   }
 }
