@@ -5,12 +5,45 @@
 }
 
 .t-experiments__header {
-  padding-top: 4rem;
-  margin-bottom: 2rem;
+  padding-top: 6rem;
+  margin-bottom: 4rem;
 }
 
 .t-experiments__title {
   font-family: $FONT_ROZHA;
   font-size: 2rem;
   line-height: 2em;
+}
+
+.t-experiments__grid {
+  position: relative;
+}
+
+.t-experiments__border-bottom,
+.t-experiments__border-right {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  background-color: $COLOR_WHITE;
+  bottom: 0;
+}
+
+// .t-experiments__border-bottom {
+//   width: calc(100% + 30px);
+//   height: 1px;
+//   left: -15px;
+// }
+
+// .t-experiments__border-right {
+//   width: 1px;
+//   height: 100%;
+//   right: -15px;
+// }
+
+.t-experiments__card {
+  // border-bottom: 1px solid $COLOR_BLACK;
+  // border-right: 1px solid $COLOR_BLACK;
+  height: 12rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }

@@ -5,6 +5,7 @@
 
 /*----------  Core  ----------*/
 @import 't-experiments-[base]';
+@include breakpoint($SM) {@import 't-experiments-[sm]';}
 
 /*----------  Enhacements  ----------*/
 

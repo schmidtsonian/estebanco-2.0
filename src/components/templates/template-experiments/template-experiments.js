@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Template from '../template';
 import TemplateExperimentsHeader from './template-experiments-header';
-
+import TemplateExperimentsGrid from './template-experiments-grid';
 
 class TemplateExperiments extends Template {
 
@@ -34,10 +34,15 @@ class TemplateExperiments extends Template {
 
     return(
       <section className='t-experiments'>
+
         <TemplateExperimentsHeader
-          title={data.title || ''}
-          description={data.description || ''}>
+          title={data.title}
+          description={data.description}>
         </TemplateExperimentsHeader>
+
+        <TemplateExperimentsGrid
+          items={data.items}>
+        </TemplateExperimentsGrid>
       </section>
     )
   }
