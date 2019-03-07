@@ -51,13 +51,13 @@ class Layout extends Component {
           {() => (
             <div className={`l-main ${classMenuActive}`}>
               <Helmet
-                title={'some title'}
+                title={'global title'}
                 meta={[
-                  { name: 'description', content: 'Sample' },
-                  { name: 'keywords', content: 'sample, something' },
+                  { name: 'description', content: 'global description' },
+                  { name: 'keywords', content: 'global sample, global something' },
                 ]}
               />
-              <Header siteTitle={'some title'} onClick={this.toggleMenu.bind(this)}/>
+              <Header onClick={this.toggleMenu.bind(this)}/>
 
               <main className='l-container'>
 
@@ -70,6 +70,10 @@ class Layout extends Component {
         </MainContext.Consumer>
       </MainProvider>
     );
+  }
+
+  componentDidUpdate() {
+    console.log('Layout componentDidUpdate');
   }
 
   componentWillUnmount() {
