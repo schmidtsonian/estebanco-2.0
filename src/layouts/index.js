@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 
 import Transition from '../components/transition';
-import Header from '../components/molecules/header/header';
+import Header from './navigation';
 import {MainProvider, MainContext} from '../contexts/main-context';
 import '../styles/main.scss';
 

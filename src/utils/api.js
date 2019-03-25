@@ -105,7 +105,7 @@ export default class Api {
         default:
           break;
       }
-
+      console.log(dataHome);
 
       return {dataExperiments, dataHome};
     });
