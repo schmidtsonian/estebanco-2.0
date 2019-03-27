@@ -79,11 +79,23 @@ export default class Api {
   _normalizeData(data) {
 
     // TODO: create/models models
-    let dataHome = {};
+    // right now the model is clone
+    // of the index.js and experiments.js: state data{}
+    let dataHome = {
+      seo_title: '',
+      seo_description: '',
+      seo_keywords: '',
+      seo_image: {url:''}
+    };
     let dataExperiments = {
       title: '',
       description: '',
-      items: []
+      items: [],
+
+      seo_title: '',
+      seo_description: '',
+      seo_keywords: '',
+      seo_image: {url:''}
     };
 
     data.map((page) => {
@@ -92,6 +104,13 @@ export default class Api {
         case 'experiments':
           dataExperiments.title = page.data.title;
           dataExperiments.description = page.data.description;
+
+          // TODO: Refactor
+          dataExperiments.seo_title = page.data.seo_title
+          dataExperiments.seo_description = page.data.seo_description
+          dataExperiments.seo_keywords = page.data.seo_keywords
+          dataExperiments.seo_image.url = page.data.seo_image.url
+
           break;
 
         case 'experiment':
@@ -100,12 +119,17 @@ export default class Api {
 
         case 'home':
           dataHome = page.data;
+          // TODO: Refactor
+          dataHome.seo_title = page.data.seo_title
+          dataHome.seo_description = page.data.seo_description
+          dataHome.seo_keywords = page.data.seo_keywords
+          dataHome.seo_image.url = page.data.seo_image.url
           break;
         // eslint-disable-next-line
         default:
           break;
       }
-      console.log(dataHome);
+
 
       return {dataExperiments, dataHome};
     });

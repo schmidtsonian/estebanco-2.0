@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import Helmet from 'react-helmet';
+// import Helmet from 'react-helmet';
 
 import Transition from '../components/transition';
 import Header from './navigation';
+import SEO from './seo';
 import {MainProvider, MainContext} from '../contexts/main-context';
 import '../styles/main.scss';
 
@@ -50,13 +51,7 @@ class Layout extends Component {
         <MainContext.Consumer>
           {() => (
             <div className={`l-main ${classMenuActive}`}>
-              <Helmet
-                title={'global title'}
-                meta={[
-                  { name: 'description', content: 'global description' },
-                  { name: 'keywords', content: 'global sample, global something' },
-                ]}
-              />
+              <SEO/>
               <Header onClick={this.toggleMenu.bind(this)}/>
 
               <main className='l-container'>

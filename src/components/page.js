@@ -14,7 +14,7 @@ export default class Page extends Component {
   componentDidMount() {
     console.log(`Page ${this.dataName}: componentDidMount`);
 
-    console.log(this);
+    // console.log(this);
     this._fetchData();
   }
 
