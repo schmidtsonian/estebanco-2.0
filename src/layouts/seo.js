@@ -28,29 +28,29 @@ const SEO = ({
     title={title}
     meta={[
       {name: 'description', content: `${description}`},
-      {name: 'keywords', content: `${keywords}` },
-      {name: 'msapplication-tap-highlight', content: `${msapplication_tap_highlight}` },
+      {name: 'keywords', content: `${keywords}`},
+      {name: 'msapplication-tap-highlight', content: `${msapplication_tap_highlight}`},
 
-      {name: 'twitter:card', content: `${twitter_card}` },
-      {name: 'twitter:site', content: `${twitter_site}` },
-      {name: 'twitter:title', content: `${title}` },
-      {name: 'twitter:description', content: `${description}` },
-      {name: 'twitter:image', content: `${og_image}` },
+      {name: 'twitter:card', content: `${twitter_card}`},
+      {name: 'twitter:site', content: `${twitter_site}`},
+      {name: 'twitter:title', content: `${title}`},
+      {name: 'twitter:description', content: `${description}`},
+      {name: 'twitter:image', content: `${og_image}`},
 
-      { property: 'og:title', content: `${title}` },
-      { property: 'og:type', content: `${og_type}` },
-      { property: 'og:url', content: `${url}${slug}` },
-      { property: 'og:image', content: `${og_image}` },
-      { property: 'og:description', content: `${description}` },
+      {property: 'og:title', content: `${title}`},
+      {property: 'og:type', content: `${og_type}`},
+      {property: 'og:url', content: `${url}${slug}`},
+      {property: 'og:image', content: `${og_image}`},
+      {property: 'og:description', content: `${description}`},
 
-      { name: 'application-name', content: `${title}` },
-      { name: 'application-TileImage', content: `${favicon}` },
-      { name: 'application-TileColor', content: `${color}` },
+      {name: 'application-name', content: `${title}`},
+      {name: 'application-TileImage', content: `${favicon}`},
+      {name: 'application-TileColor', content: `${color}`},
 
-      { name: 'theme-color', content: `${color}` },
+      {name: 'theme-color', content: `${color}`},
     ]}
     link={[
-      { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
+      {rel: 'shortcut icon', type: 'image/png', href: `${favicon}`}
     ]}
   >
 

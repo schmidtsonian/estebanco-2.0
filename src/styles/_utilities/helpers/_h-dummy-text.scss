@@ -1,0 +1,31 @@
+.h-dtext {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: $COLOR_WHITE;
+    position: absolute;
+    top: 0;
+  }
+
+  &.is-ready:after {
+    width: 0;
+    transition-timing-function: $EASE_IN_CUBIC;
+    transition-duration: 0.25s;
+    transition-property: width;
+  }
+}
+
+.h-dtext--grey:after { background-color: $COLOR_GREY; }
+
+// TODO: add loop
+.h-dtext--40:after { width: 40%; }
+.h-dtext--50:after { width: 50%; }
+.h-dtext--60:after { width: 60%; }
+.h-dtext--70:after { width: 70%; }
+.h-dtext--80:after { width: 80%; }
+.h-dtext--90:after { width: 90%; }
+

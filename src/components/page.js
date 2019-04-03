@@ -10,15 +10,17 @@ export default class Page extends Component {
     data: {}
   };
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+
+    console.log(`Page componentDidUpdate`);
+  }
+
 
   componentDidMount() {
     console.log(`Page ${this.dataName}: componentDidMount`);
 
-    // console.log(this);
     this._fetchData();
   }
-
-
 
   _fetchData() {
 

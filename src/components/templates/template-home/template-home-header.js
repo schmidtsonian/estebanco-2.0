@@ -11,15 +11,31 @@ class TemplateHomeHeader extends Component {
   };
 
   static defaultProps = {
-    subtitle: '',
-    title_line_1: '',
-    title_line_2: '',
-    email: '',
+    subtitle: '-',
+    title_line_1: '-',
+    title_line_2: '-',
+    email: '-',
   };
+
+  state = {
+    classDataReady: ''
+  };
+
+  componentWillReceiveProps(newProps) {
+
+    const {props} = this;
+    const hasNewData = newProps !== props;
+    if (hasNewData === true) {
+      this.setState({classDataReady: 'is-ready'});
+    }
+  }
+
 
   render() {
 
     const {props} = this;
+    const {classDataReady} = this.state;
+
     return (
 
       <header className='t-home__header'>
@@ -27,14 +43,16 @@ class TemplateHomeHeader extends Component {
         <div className='t-home__header-container h-table'>
           <div className='t-home__header-content h-table__cell'>
 
-            <h2 className='t-home__top'> {props.subtitle} </h2>
+            <h2 className={`t-home__top h-dtext h-dtext--40 ${classDataReady}`}>
+              {props.subtitle}
+            </h2>
 
             <h1 className='t-home__title'>
-              <span>{props.title_line_1}</span>
-              <span>{props.title_line_2}</span>
+              <span className={`h-dtext h-dtext--80 ${classDataReady}`}>{props.title_line_1}</span>
+              <span className={`h-dtext ${classDataReady}`}>{props.title_line_2}</span>
             </h1>
 
-            <a href={`mailto:${props.email}`} title='Mail me' className='t-home__bottom'>
+            <a href={`mailto:${props.email}`} title='Mail me' className={`t-home__bottom h-dtext h-dtext--90 ${classDataReady}`}>
               {props.email}
             </a>
           </div>

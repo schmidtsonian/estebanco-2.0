@@ -6,6 +6,7 @@ export class MainProvider extends Component {
 
   render() {
 
+    // TODO: Make notes about this, I don't remember what is this for
     return (
       <MainContext.Provider value={{
         ...this.state,

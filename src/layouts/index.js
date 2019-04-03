@@ -17,6 +17,10 @@ class Layout extends Component {
     classMenuActive: ''
   };
 
+  onUnmountPage() {
+    console.log('>>>>')
+  }
+
   toggleMenu() {
 
     const {helper} = this;
@@ -34,7 +38,7 @@ class Layout extends Component {
   }
 
   shouldComponentUpdate(nexProps) {
-
+    console.log('Layout shouldComponentUpdate');
     if(nexProps.location.pathname !== this.props.location.pathname) {
       this._closeMenu();
     }
@@ -42,13 +46,15 @@ class Layout extends Component {
     return true;
   }
 
+
   render() {
 
     const {classMenuActive} = this.state;
     const {location, children} = this.props
+
     return (
-      <MainProvider>
-        <MainContext.Consumer>
+      <MainProvider >
+        <MainContext.Consumer >
           {() => (
             <div className={`l-main ${classMenuActive}`}>
               <SEO/>
@@ -70,6 +76,7 @@ class Layout extends Component {
   componentDidUpdate() {
     console.log('Layout componentDidUpdate');
   }
+
 
   componentWillUnmount() {
     console.log('Layout componentWillUnmount');
