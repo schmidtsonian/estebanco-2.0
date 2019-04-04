@@ -26,10 +26,10 @@ export default class experiments extends Page {
     return (
       <Fragment>
         <SEO
-          title={this.state.data.seo_title}
-          description={this.state.data.seo_description}
-          keywords={this.state.data.seo_keywords}
-          og_image={this.state.data.seo_image.url}
+          title={data.seo_title}
+          description={data.seo_description}
+          keywords={data.seo_keywords}
+          og_image={data.seo_image.url}
         />
         <TemplateExperiments data={data} />
       </Fragment>

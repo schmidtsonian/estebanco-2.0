@@ -25,6 +25,8 @@ class TemplateHomeHeader extends Component {
 
     const {props} = this;
     const hasNewData = newProps !== props;
+
+    // TODO: validate first load
     if (hasNewData === true) {
       this.setState({classDataReady: 'is-ready'});
     }
@@ -34,6 +36,7 @@ class TemplateHomeHeader extends Component {
   render() {
 
     const {props} = this;
+    // TODO: Create abstract Class for this logic
     const {classDataReady} = this.state;
 
     return (
