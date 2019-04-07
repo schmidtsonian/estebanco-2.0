@@ -1,6 +1,10 @@
 .t-home {
-  left: 0;
-  top: 0;
+  left: -1.5rem;
+  top: -1.5rem;
+  height: calc(150vh - 2rem);
+  position: relative;
+  width: calc(100% + 3rem);
+  padding-bottom: 1.1rem;
 }
 .t-home__header,
 .t-home__carousel {
@@ -48,7 +52,7 @@
 /*----------  Carousel ----------*/
 
 .t-home__carousel {
-  height: 40%;
+  height: 45%;
   background-color: $COLOR_LIGHT_GREY;
   background: linear-gradient(45deg, $COLOR_LIGHT_GREY 50%, $COLOR_WHITE 100%);
 

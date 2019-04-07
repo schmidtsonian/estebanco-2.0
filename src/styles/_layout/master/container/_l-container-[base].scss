@@ -2,7 +2,7 @@
 .l-container {
   position: relative;
   overflow: hidden;
-  height: calc(150vh - 2rem);
+  // height: calc(150vh - 2rem);
   min-height: calc(480px + 15rem);
   margin: 1rem;
   padding: 1rem;
@@ -13,11 +13,20 @@
 }
 
 .l-container__handler {
+  // position: relative;
+  // top: -1.5rem;
+  // left: -1.5rem;
+  // width: calc(100% + 3rem);
+  // height: calc(100% + 3rem);
+
+
+
   position: relative;
-  top: -1.5rem;
-  left: -1.5rem;
-  width: calc(100% + 3rem);
-  height: calc(100% + 3rem);
+  top: -0rem;
+  left: -0rem;
+  width: calc(100% + 0rem);
+  height: calc(100% + 0rem);
+  min-height: calc(100vh - 6rem);
 }
 
 @include is-menuopen {

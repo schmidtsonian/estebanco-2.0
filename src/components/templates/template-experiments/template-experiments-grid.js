@@ -20,12 +20,13 @@ class TemplateExperimentsGrid extends Component {
 
     return (
       <div className='t-experiments__grid'>
-        <div className='row'>
+        <div className='t-experiments__grid-row row'>
 
           {items.map((item, index) => {
             const html = PrismicDOM.RichText.asHtml(item.content);
             return <TemplateExperimentsGridCard
               key={index}
+              index={('0' + (index + 1)).slice(-2)}
               title={item.title}
               content={html}
               />

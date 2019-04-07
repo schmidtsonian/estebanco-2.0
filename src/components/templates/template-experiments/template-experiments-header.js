@@ -20,6 +20,8 @@ class TemplateExperimentsHeader extends Component {
   render() {
 
     const {title, description} = this.props;
+
+    // TODO: Create abstract Class for this logic
     const {classDataReady} = this.state;
 
     return (

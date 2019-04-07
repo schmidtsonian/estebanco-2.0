@@ -39,7 +39,7 @@ export default class TemplateHome extends Template {
     const {data} = this.props;
     return (
 
-      <section className='t-home h-abs-bg'>
+      <section className='t-home'>
 
         <TemplateHomeHeader
           title_line_1={data.title_line_1}
