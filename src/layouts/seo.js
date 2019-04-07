@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import Helmet from 'react-helmet';
 import favicon from '../../static/assets/images/estebanco_256.png';
 
+
 const SEO = ({
 
   url = 'https://estebanco.com',
@@ -16,7 +17,7 @@ const SEO = ({
   og_type = "website",
 
   // TODO: Refactor
-  og_image = `${window.location.origin}/assets/images/estebanco.jpg`,
+  og_image = `https://estebanco.com/assets/images/estebanco.jpg`,
 
   color = '#5FC19A',
 
