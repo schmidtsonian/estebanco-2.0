@@ -1,6 +1,7 @@
-#Personal Page
+# Personal Page
 
-##How to use it:
+## How to use it
+
 ```sh
 npm install -g gatsby-cli
 npm install

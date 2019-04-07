@@ -13,8 +13,8 @@
 
   &.is-ready:after {
     width: 0;
-    transition-timing-function: $EASE_IN_CUBIC;
-    transition-duration: 0.25s;
+    transition-timing-function: $EASE_OUT_CUBIC;
+    transition-duration: 0.5s;
     transition-property: width;
   }
 }

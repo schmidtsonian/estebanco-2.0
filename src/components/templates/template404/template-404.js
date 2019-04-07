@@ -48,10 +48,10 @@ class Template404 extends Template {
 
     return(
       <section className='t-404'>
-        <div className='h-abs-center'>
-          <h1 className={`h-dtext h-dtext--grey h-dtext--80 ${classDataReady}`}>{data.title}</h1>
-          <p className={`h-dtext h-dtext--grey ${classDataReady}`}>{data.description}</p>
-        </div>
+        <header className='t-404__header h-abs-center'>
+          <h1 className={`t-404__title h-dtext h-dtext--grey  ${classDataReady}`}>{data.title}</h1>
+          <p className={`t-404__desc h-dtext h-dtext--grey ${classDataReady}`}>{data.description}</p>
+        </header>
       </section>
     )
   }
