@@ -27,6 +27,8 @@ const SEO = ({
   <Helmet
     title={title}
     meta={[
+      {name: 'robots', content: 'noindex, nofollow'},
+
       {name: 'description', content: `${description}`},
       {name: 'keywords', content: `${keywords}`},
       {name: 'msapplication-tap-highlight', content: `${msapplication_tap_highlight}`},
