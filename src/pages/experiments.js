@@ -7,29 +7,15 @@ export default class experiments extends Page {
 
   dataName = 'experiments';
 
-  state = {
-    data: {
-      title: '',
-      description: '',
-      items: [],
-
-      seo_title: '',
-      seo_description: '',
-      seo_keywords: '',
-      seo_image: {url:''}
-    }
-  }
-
   render() {
     const {data} = this.state;
 
     return (
       <Fragment>
         <SEO
-          title={data.seo_title}
-          description={data.seo_description}
-          keywords={data.seo_keywords}
-          og_image={data.seo_image.url}
+          title='Estebanco + Experiments'
+          description='Play + Code, things I do for fun'
+          keywords='experiments, web experiments, front-end experiments'
         />
         <TemplateExperiments data={data} />
       </Fragment>

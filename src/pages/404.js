@@ -11,12 +11,7 @@ export default class NotFoundPage extends Page {
   state = {
     data: {
       title: '0',
-      description: '0',
-
-      seo_title: '',
-      seo_description: '',
-      seo_keywords: '',
-      seo_image: {url:''}
+      description: '0'
     }
   }
 
@@ -26,10 +21,9 @@ export default class NotFoundPage extends Page {
     return (
       <Fragment>
         <SEO
-          title={data.seo_title}
-          description={data.seo_description}
-          keywords={data.seo_keywords}
-          og_image={data.seo_image.url}
+          title='Not Found'
+          description="You just hit a route that doesn't exist... the sadness."
+          keywords='bad code, bad route'
         />
         <Template404 data={data}/>
       </Fragment>

@@ -22,8 +22,8 @@ class TemplateExperiments extends Template {
 
     // Model definition
     data: {
-      title: '',
-      description: '',
+      title: '0',
+      description: '0',
       items: []
     }
   };

@@ -7,25 +7,18 @@ class IndexPage extends Page {
 
   dataName = 'home';
 
-  state = {
-    data: {
-      seo_title: '',
-      seo_description: '',
-      seo_keywords: '',
-      seo_image: {url:''}
-    }
-  };
-
   render() {
+
+    const {data} = this.state;
+
     return (
       <Fragment>
         <SEO
-          title={this.state.data.seo_title}
-          description={this.state.data.seo_description}
-          keywords={this.state.data.seo_keywords}
-          og_image={this.state.data.seo_image.url}
+          title='Estebanco + Developer'
+          description='Coder + Creative Developer'
+          keywords='front-end developer, web developer, creative coder, coder, experiments'
         />
-        <TemplateHome data={this.state.data} />
+        <TemplateHome data={data} />
       </Fragment>
     );
   }

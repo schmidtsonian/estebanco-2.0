@@ -14,7 +14,9 @@ const SEO = ({
   twitter_site = '@schmidtsonian',
 
   og_type = "website",
-  og_image = "og:image",
+
+  // TODO: Refactor
+  og_image = `${window.location.origin}/assets/images/estebanco.jpg`,
 
   color = '#5FC19A',
 
