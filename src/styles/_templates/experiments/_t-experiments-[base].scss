@@ -1,7 +1,5 @@
 .t-experiments {
   position: relative;
-  // padding-left: 1.5rem;
-  // padding-right: 1.5rem;
 }
 
 .t-experiments__header {
@@ -19,37 +17,7 @@
   position: relative;
 }
 
-.t-experiments__grid-row {
-  margin-left: 0;
-  margin-right: 0;
-  border-left: 1px solid $COLOR_BLACK;
-  border-top: 1px solid $COLOR_BLACK;
-}
-
-.t-experiments__border-bottom,
-.t-experiments__border-right {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  background-color: $COLOR_WHITE;
-  bottom: 0;
-}
-
-// .t-experiments__border-bottom {
-//   width: calc(100% + 30px);
-//   height: 1px;
-//   left: -15px;
-// }
-
-// .t-experiments__border-right {
-//   width: 1px;
-//   height: 100%;
-//   right: -15px;
-// }
-
 .t-experiments__card {
-  border-bottom: 1px solid $COLOR_BLACK;
-  border-right: 1px solid $COLOR_BLACK;
   height: 19rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -58,10 +26,10 @@
 
 .t-experiments__card-index {
   font-family: $FONT_ANTON;
-  font-size: 6rem;
+  font-size: 13rem;
   color: $COLOR_GREY;
   position: absolute;
-  left: 0.1em;
+  left: -0.36em;
   top: 0.2em;
   display: block;
   line-height: 1em;
@@ -69,19 +37,22 @@
 }
 
 .t-experiments__card-title {
+  position: relative;
   padding-bottom: 0.5rem;
-  height: 3rem;
   margin-top: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.1em;
 }
 
 .t-experiments__card-content {
-
+  position: relative;
   p {
     padding-bottom: 0.5rem;
   }
 
   a {
     text-decoration: underline;
+
   }
 
   ul {

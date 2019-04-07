@@ -20,7 +20,7 @@ class TemplateExperimentsGrid extends Component {
 
     return (
       <div className='t-experiments__grid'>
-        <div className='t-experiments__grid-row row'>
+        <div className='t-experiments__grid-row'>
 
           {items.map((item, index) => {
             const html = PrismicDOM.RichText.asHtml(item.content);
@@ -32,9 +32,6 @@ class TemplateExperimentsGrid extends Component {
               />
             }
           )}
-
-          <span className='t-experiments__border-bottom'></span>
-          <span className='t-experiments__border-right'></span>
         </div>
       </div>
     );
