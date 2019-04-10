@@ -101,6 +101,7 @@
 
 .t-home__carousel-items {
   overflow: hidden;
+  background-color: $COLOR_LIGHT;
 }
 
 .t-home__carousel-item {
@@ -123,17 +124,14 @@
   }
 }
 
-.t-home__carousel-item__image {
-  opacity: .2;
-}
 
 .t-home__carousel-item__number {
   font-family: $FONT_ANTON;
-  font-size: 10rem;
+  font-size: 7rem;
   color: $COLOR_GREY;
   position: absolute;
-  right: -0.1em;
-  top: -0.2em;
+  left: -0.1em;
+  bottom: -0.2em;
   display: block;
   line-height: 1em;
   opacity: 0.4;
@@ -141,7 +139,7 @@
 
 .t-home__carousel-item__line-top,
 .t-home__carousel-item__line-bottom {
-  height: 2px;
+  height: 1px;
   background-color: $COLOR_WHITE;
   margin-left: 2rem;
 }
@@ -163,17 +161,18 @@
 
 .t-home__carousel-item__desc-top,
 .t-home__carousel-item__desc-bottom {
-  color: $COLOR_BLACK;
   text-align: right
 }
 
 .t-home__carousel-item__desc-top {
   top: 1.5em;
   cursor: pointer;
+  color: $COLOR_GREEN;
 }
 
 .t-home__carousel-item__desc-bottom {
   bottom: 1.5em;
+  color: $COLOR_BLACK;
 }
 
 .t-home__carousel-item__desc-bottom--bullets {
@@ -218,7 +217,6 @@
     height: 1rem;
     border-right: 2px solid currentColor;
     border-top: 2px solid currentColor;
-    // right: 1rem;
     transform: rotate(45deg);
   }
 }

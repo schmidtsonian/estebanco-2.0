@@ -2,7 +2,7 @@
   color: $COLOR_BLACK;
   line-height: 1.4rem;
   text-align: right;
-  h1, h2, h3, h4, h5, p {
+  h1, h2, h3, h4, h5, p, ul, ol {
     padding-bottom: 2rem;
   }
   a {
@@ -15,5 +15,8 @@
     text-align: left;
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+  strong, b {
+    font-weight: bold
   }
 }

@@ -78,36 +78,20 @@ export default class Api {
 
   _normalizeData(data) {
 
-    // TODO: create/models models
+    // TODO: create models
     // right now the model is clone
     // of the index.js and experiments.js: state data{}
 
-    // TODO: seo tags doesn't work for crawlers, remove this, now I'm using hardcoded tags
-    let dataHome = {
-      // seo_title: '',
-      // seo_description: '',
-      // seo_keywords: '',
-      // seo_image: {url:''}
-    };
+    let dataHome = {};
     let dataExperiments = {
       title: '',
       description: '',
       items: [],
-
-      // seo_title: '',
-      // seo_description: '',
-      // seo_keywords: '',
-      // seo_image: {url:''}
     };
 
     let data404 = {
       title: '',
       description: '',
-
-      // seo_title: '',
-      // seo_description: '',
-      // seo_keywords: '',
-      // seo_image: {url:''}
     }
 
     data.map((page) => {
@@ -117,12 +101,6 @@ export default class Api {
           dataExperiments.title = page.data.title;
           dataExperiments.description = page.data.description;
 
-          // TODO: Refactor
-          // dataExperiments.seo_title = page.data.seo_title
-          // dataExperiments.seo_description = page.data.seo_description
-          // dataExperiments.seo_keywords = page.data.seo_keywords
-          // dataExperiments.seo_image.url = page.data.seo_image.url
-
           break;
 
         case 'experiment':
@@ -131,19 +109,9 @@ export default class Api {
 
         case 'home':
           dataHome = page.data;
-          // TODO: Refactor
-          // dataHome.seo_title = page.data.seo_title
-          // dataHome.seo_description = page.data.seo_description
-          // dataHome.seo_keywords = page.data.seo_keywords
-          // dataHome.seo_image.url = page.data.seo_image.url
           break;
         case '404':
           data404 = page.data;
-          // TODO: Refactor
-          // data404.seo_title = page.data.seo_title
-          // data404.seo_description = page.data.seo_description
-          // data404.seo_keywords = page.data.seo_keywords
-          // data404.seo_image.url = page.data.seo_image.url
         // eslint-disable-next-line
         default:
           break;
