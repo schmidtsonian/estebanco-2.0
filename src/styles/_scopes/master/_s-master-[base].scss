@@ -1,12 +1,23 @@
-.s-master {
+  .s-master {
   color: $COLOR_BLACK;
   line-height: 1.4rem;
   text-align: right;
-  h1, h2, h3, h4, h5, p, ul, ol {
+  h1, h2, h3 {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+  }
+  h4, h5, p, ul, ol {
     padding-bottom: 2rem;
   }
+  
   a {
     text-decoration: underline;
+  }
+  li {
+    opacity: 0.8;
+    &:after {
+      content: ' -'
+    }
   }
 
   pre {
