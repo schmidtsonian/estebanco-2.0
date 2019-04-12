@@ -1,3 +1,16 @@
 .h-text-align-center {
   text-align: center;
 }
+
+
+@include is-desktop {
+  .h-anchor  {
+    transition-property: color;
+    transition-duration: 0.25s;
+
+    &:hover {
+      color: $COLOR_GOLD;
+    }
+  }
+}
+

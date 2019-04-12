@@ -67,7 +67,7 @@ class TemplateHomeCarouselItem extends Component {
           </span>
 
           {/* Open Detail */}
-          <p onClick={this._openDetail.bind(this)} className='t-home__carousel-item__desc-top h-abs-center-top'>
+          <p onClick={this._openDetail.bind(this)} className='t-home__carousel-item__desc-top h-abs-center-top h-anchor'>
             {props.action}
           </p>
 
@@ -81,7 +81,7 @@ class TemplateHomeCarouselItem extends Component {
         <div className='t-home__carousel-item__detail h-abs-full s-master'>
 
           {/* Close Detail */}
-          <span onClick={this._closeDetail.bind(this)} className='t-home__carousel-item__detail-close'></span>
+          <span onClick={this._closeDetail.bind(this)} className='t-home__carousel-item__detail-close h-anchor'></span>
 
           <div className='t-home__carousel-item__detail-content' dangerouslySetInnerHTML={{__html: props.detail}} />
         </div>

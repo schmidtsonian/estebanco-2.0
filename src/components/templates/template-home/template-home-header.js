@@ -55,7 +55,7 @@ class TemplateHomeHeader extends Component {
               <span className={`h-dtext ${classDataReady}`}>{props.title_line_2}</span>
             </h1>
 
-            <a href={`mailto:${props.email}`} title='Mail me' className={`t-home__bottom h-dtext h-dtext--90 ${classDataReady}`}>
+            <a href={`mailto:${props.email}`} title='Mail me' className={`t-home__bottom h-dtext h-dtext--90 h-anchor ${classDataReady}`}>
               {props.email}
             </a>
           </div>

@@ -1,4 +1,4 @@
-  .s-master {
+.s-master {
   color: $COLOR_BLACK;
   line-height: 1.4rem;
   text-align: right;
@@ -12,6 +12,7 @@
   
   a {
     text-decoration: underline;
+    @extend .h-anchor;
   }
   li {
     opacity: 0.8;

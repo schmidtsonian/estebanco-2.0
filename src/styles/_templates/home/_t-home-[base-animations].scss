@@ -24,3 +24,21 @@
     opacity: 1;
   }
 }
+
+.t-home__carousel-nav__bt--all span {
+  transition-timing-function: $EASE_OUT_CUBIC;
+  transition-duration: 0.25s;
+  transition-property: width, margin-right, transform, top, bottom;
+}
+
+@include is-desktop {
+  .t-home__carousel-nav__bt  {
+    transition-property: background-color;
+    transition-duration: 0.25s;
+
+    &:hover {
+      background-color: $COLOR_GOLD;
+    }
+  }
+}
+

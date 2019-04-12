@@ -6,19 +6,22 @@ import Header from './navigation';
 import SEO from './seo';
 import {MainProvider, MainContext} from '../contexts/main-context';
 import '../styles/main.scss';
+import isTouchDevice from '../utils/is-touch-device';
 
 class Layout extends Component {
 
   helper = {
-    classMenuActive: 'is-menuopen'
+    classMenuActive: 'is-menuopen',
+    classIsMobile: 'is-mobile'
   }
 
   state = {
-    classMenuActive: ''
+    classMenuActive: '',
+    classIsMobile: ''
   };
 
   onUnmountPage() {
-    console.log('>>>>')
+    console.log('>>>>');
   }
 
   toggleMenu() {
@@ -46,17 +49,25 @@ class Layout extends Component {
     return true;
   }
 
+  componentWillMount() {
+
+    const {helper} = this;
+
+    const classIsMobile = isTouchDevice() ? helper.classIsMobile : '';
+    
+    this.setState({classIsMobile: classIsMobile});
+  }
 
   render() {
 
-    const {classMenuActive} = this.state;
+    const {classMenuActive, classIsMobile} = this.state;
     const {location, children} = this.props
 
     return (
       <MainProvider >
         <MainContext.Consumer >
           {() => (
-            <div className={`l-main ${classMenuActive}`}>
+            <div className={`l-main ${classMenuActive} ${classIsMobile}`}>
               <SEO/>
               <Header onClick={this.toggleMenu.bind(this)}/>
 

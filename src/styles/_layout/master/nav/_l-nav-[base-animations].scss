@@ -42,7 +42,6 @@
   opacity: 1;
 }
 
-
 /*----------  To  ----------*/
 @include is-menuopen {
   .l-nav__link__text,
@@ -75,6 +74,18 @@
     }
     .l-nav__link__text {
       transition-delay: 0s, 0s, 0.1s;
+    }
+  }
+}
+
+
+@include is-desktop {
+  .l-nav-toggle {
+    transition-property: background-color;
+    transition-duration: 0.25s;
+
+    &:hover {
+      background-color: $COLOR_GOLD;
     }
   }
 }

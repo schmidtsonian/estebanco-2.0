@@ -52,7 +52,7 @@
 
   a {
     text-decoration: underline;
-
+    @extend .h-anchor;
   }
 
   ul {
