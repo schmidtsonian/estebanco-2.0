@@ -117,7 +117,21 @@ export default class Api {
           break;
       }
 
+      
       return {dataExperiments, dataHome, data404};
+    });
+    
+    //TODO: Refactor
+    dataExperiments.items.sort((a, b) => {
+
+      if (parseInt(a.number) > parseInt(b.number)) {
+        return -1;
+      }
+      if (parseInt(a.number) < parseInt(b.number)) {
+        return 1;
+      }
+
+      return 0;
     });
 
     return {
