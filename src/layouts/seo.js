@@ -5,7 +5,7 @@ import favicon from '../../static/assets/images/estebanco_256.png';
 
 const SEO = ({
 
-  url = 'https://estebanco.com',
+  url = 'https://www.estebanco.com',
   slug = '/',
   title = 'Estebanco',
   description = 'code + experiments',
@@ -17,7 +17,7 @@ const SEO = ({
   og_type = "website",
 
   // TODO: Refactor
-  og_image = `https://estebanco.com/assets/images/estebanco.jpg`,
+  og_image = `https://www.estebanco.com/assets/images/estebanco.jpg`,
 
   color = '#5FC19A',
 
