@@ -21,7 +21,7 @@ class Layout extends Component {
   };
 
   onUnmountPage() {
-    console.log('>>>>');
+    //console.log('>>>>');
   }
 
   toggleMenu() {
