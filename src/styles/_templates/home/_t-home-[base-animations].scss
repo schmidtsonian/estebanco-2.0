@@ -1,0 +1,26 @@
+.t-home__carousel-item__detail-content {
+  opacity: 0;
+  transform: translateX(25px);
+  transition: opacity 0.25s 0s, transform 1s 0.35s;
+}
+
+.t-home__carousel-item__detail {
+  transition-timing-function: $EASE_OUT_SINE;
+  transition-duration: 0.35s;
+  transition-delay: 0.15s;
+  transition-property: right;
+}
+
+.t-home__carousel-item.is-open {
+  .t-home__carousel-item__detail {
+    transition-delay: 0s;
+    transition-timing-function: $EASE_IN_SINE;
+  }
+  .t-home__carousel-item__detail-content {
+    transition-delay: 0.15s;
+    transition-duration: 0.7s;
+
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}

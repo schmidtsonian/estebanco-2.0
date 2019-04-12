@@ -83,7 +83,7 @@ class TemplateHomeCarouselItem extends Component {
           {/* Close Detail */}
           <span onClick={this._closeDetail.bind(this)} className='t-home__carousel-item__detail-close'></span>
 
-          <div dangerouslySetInnerHTML={{__html: props.detail}} />
+          <div className='t-home__carousel-item__detail-content' dangerouslySetInnerHTML={{__html: props.detail}} />
         </div>
       </div>
     );
