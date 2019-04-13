@@ -137,7 +137,7 @@
   opacity: 0.4;
 }
 
-.t-home__carousel-item__line-top,
+//.t-home__carousel-item__line-top,
 .t-home__carousel-item__line-bottom {
   height: 1px;
   background-color: $COLOR_WHITE;
@@ -165,9 +165,17 @@
 }
 
 .t-home__carousel-item__desc-top {
-  top: 1.5em;
+//  top: 1.5em;
   cursor: pointer;
   color: $COLOR_GREEN;
+
+  top: 0;
+  background: $COLOR_LIGHT;
+  padding-right: 0;
+  margin-right: 0;
+  height: 3rem;
+  padding-top: 1rem;
+  padding-right: 2rem;
 }
 
 .t-home__carousel-item__desc-bottom {
