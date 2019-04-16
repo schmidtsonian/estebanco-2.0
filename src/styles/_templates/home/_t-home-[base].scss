@@ -138,11 +138,11 @@
 }
 
 //.t-home__carousel-item__line-top,
-.t-home__carousel-item__line-bottom {
-  height: 1px;
-  background-color: $COLOR_WHITE;
-  margin-left: 2rem;
-}
+// .t-home__carousel-item__line-bottom {
+//   height: 1px;
+//   background-color: $COLOR_WHITE;
+//   margin-left: 2rem;
+// }
 
 .t-home__carousel-item__line-top {
   top: 3rem;
@@ -174,12 +174,12 @@
   padding-right: 0;
   margin-right: 0;
   height: 3rem;
-  padding-top: 1rem;
+  padding-top: 0.8rem;
   padding-right: 2rem;
 }
 
 .t-home__carousel-item__desc-bottom {
-  bottom: 1.5em;
+  bottom: 1em;
   color: $COLOR_BLACK;
 }
 
